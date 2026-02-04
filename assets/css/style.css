@@ -306,3 +306,76 @@ h2{
   .container.inner{ padding: 52px 22px; }
   .actions{ flex-direction: column; align-items: flex-start; }
 }
+/* =========================
+   MOBILE FIX PACK (no hamburger)
+   ========================= */
+@media (max-width: 640px){
+
+  /* Header: keep it clean */
+  .nav{
+    padding: 10px 0;
+  }
+
+  .brand img{
+    height: 38px;
+    width: 38px;
+  }
+
+  .brand .name{
+    font-size: 14px;
+    letter-spacing: .2px;
+  }
+
+  /* Hide messy links on mobile (no overflow) */
+  .links a{ display:none; }
+
+  /* Show only the CTA button */
+  .links a.cta{
+    display:inline-flex;
+    padding: 9px 12px;
+    border-radius: 12px;
+    font-size: 13px;
+  }
+
+  /* Hero: more breathing space */
+  .hero{
+    min-height: 86vh;
+    background-position: 50% 18%;
+  }
+
+  .container.inner{
+    padding: 44px 22px;
+  }
+
+  /* Text sizing for mobile */
+  .hero h1{
+    font-size: 34px;
+    line-height: 1.12;
+    margin: 14px 0 12px;
+  }
+
+  .lead{
+    font-size: 15.5px;
+    line-height: 1.55;
+    max-width: 92%;
+  }
+
+  /* Buttons: full width, stacked */
+  .actions{
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+  }
+
+  .btn{
+    width: 100%;
+    justify-content: center;
+    padding: 13px 16px;
+    border-radius: 14px;
+  }
+
+  /* Make secondary button clearer */
+  .btn:not(.primary){
+    background: rgba(0,0,0,.18);
+  }
+}
