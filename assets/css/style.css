@@ -147,3 +147,12 @@ section + section {
   border: 1px solid rgba(255,255,255,.12);
   backdrop-filter: blur(8px);
 }
+.hero{
+  filter: none;
+}
+.hero{
+  position: relative;
+}
+.hero{
+  background-color:#000;
+}
