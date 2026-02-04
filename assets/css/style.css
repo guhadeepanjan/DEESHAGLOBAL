@@ -594,30 +594,25 @@ h2{
    HERO FULL-WIDTH STATEMENT
    ========================= */
 
+/* Base (mobile + tablet stay unchanged) */
 .hero-statement{
   width: 100vw;
-  margin-left: calc(-50vw + 50%);
-  margin-right: calc(-50vw + 50%);
-  padding: 26px 8vw;
-
-  text-align: center;
+  max-width: 1200px;
+  margin: 0 auto;
   font-size: 22px;
+  line-height: 1.45;
+  text-align: center;
   font-weight: 500;
-  line-height: 1.55;
-  letter-spacing: .2px;
+  letter-spacing: 0.3px;
+}
 
-  color: rgba(255,255,255,.95);
-
-  background: linear-gradient(
-    180deg,
-    rgba(6,10,20,.55),
-    rgba(6,10,20,.72)
-  );
-
-  border-top: 1px solid rgba(255,255,255,.12);
-  border-bottom: 1px solid rgba(255,255,255,.12);
-
-  animation: heroFadeUp 1.2s ease-out both;
+/* DESKTOP / WEB VIEW ONLY */
+@media (min-width: 1025px){
+  .hero-statement{
+    font-size: 250%;
+    line-height: 1.35;
+    letter-spacing: 0.6px;
+  }
 }
 
 /* Highlighted words */
