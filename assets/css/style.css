@@ -595,15 +595,40 @@ h2{
    ========================= */
 
 /* Base (mobile + tablet stay unchanged) */
+/* =========================
+   HERO STATEMENT – DESKTOP SAFE FIX
+   ========================= */
+
 .hero-statement{
-  width: 100vw;
-  max-width: 1200px;
+  max-width: 1120px;          /* matches your --max container */
   margin: 0 auto;
-  font-size: 22px;
-  line-height: 1.45;
+  padding: 0 22px;            /* keeps text inside safe area */
   text-align: center;
   font-weight: 500;
   letter-spacing: 0.3px;
+  line-height: 1.4;
+  overflow-wrap: anywhere;
+}
+
+/* Desktop only: large but controlled */
+@media (min-width: 1025px){
+  .hero-statement{
+    font-size: clamp(26px, 2.4vw, 44px);
+  }
+}
+
+/* Highlighted words */
+.hero-statement span{
+  color: var(--gold2);
+  font-weight: 700;
+}
+
+/* Mobile tuning (unchanged behavior) */
+@media (max-width: 640px){
+  .hero-statement{
+    font-size: 18px;
+    padding: 22px 18px;
+  }
 }
 
 /* DESKTOP / WEB VIEW ONLY */
