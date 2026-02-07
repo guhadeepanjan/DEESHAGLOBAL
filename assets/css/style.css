@@ -868,3 +868,30 @@ h2{
     background-position: center;
   }
 }
+/* Make hero content sit lower so more video is visible */
+.hero-video .container.inner{
+  padding-top: 90px;        /* pushes content down a bit */
+  padding-bottom: 40px;
+  align-items: center;      /* center align looks cleaner */
+}
+
+/* Make the glass panel smaller + more transparent */
+.hero-statement.hero-animate{
+  max-width: 900px;         /* narrower so video shows on sides */
+  padding: 14px 18px;       /* smaller height */
+  background: rgba(6,10,20,.28);   /* lighter */
+  border: 1px solid rgba(255,255,255,.10);
+  box-shadow: 0 12px 40px rgba(0,0,0,.25);
+  backdrop-filter: blur(8px);
+}
+
+/* Reduce text size slightly so it doesn't dominate */
+.hero-animate .hs-1{
+  font-size: clamp(18px, 2vw, 30px);
+  margin-bottom: 8px;
+}
+
+.hero-animate .hs-2{
+  font-size: clamp(14px, 1.2vw, 18px);
+  line-height: 1.55;
+}
