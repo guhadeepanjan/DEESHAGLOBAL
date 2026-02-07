@@ -102,24 +102,26 @@ a{ color:inherit; text-decoration:none; }
 }
 
 /* =========================
-   HERO BASE + VIDEO
+   HERO (VIDEO)
    ========================= */
 .hero{
   position: relative;
   min-height: 78vh;
   display:flex;
-  align-items:center;
+  align-items:stretch;
+  background-size: cover;
+  background-position: center;
   overflow: hidden;
 }
 
-/* Overlay (above video, below text) */
+/* overlay above video, below content */
 .hero::before{
   content:"";
   position:absolute;
   inset:0;
   background:
-    radial-gradient(1200px 600px at 20% 40%, rgba(0,0,0,.08), rgba(0,0,0,0) 60%),
-    linear-gradient(180deg, rgba(6,10,20,.12) 0%, rgba(6,10,20,.36) 55%, rgba(6,10,20,.62) 100%);
+    radial-gradient(1200px 600px at 20% 40%, rgba(0,0,0,.06), rgba(0,0,0,0) 60%),
+    linear-gradient(180deg, rgba(6,10,20,.10) 0%, rgba(6,10,20,.24) 55%, rgba(6,10,20,.55) 100%);
   z-index: 1;
 }
 
@@ -132,26 +134,26 @@ a{ color:inherit; text-decoration:none; }
   height:100%;
   object-fit: cover;
   z-index: 0;
-  filter: saturate(1.03) contrast(1.03);
+  filter: saturate(1.02) contrast(1.02);
 }
 
-/* Hero content above overlay */
+/* Hero inner */
 .container.inner{
   position: relative;
   z-index: 2;
   width: 100%;
-  padding: 64px 22px 38px;
+  padding: 28px 22px 26px;
   display:flex;
   flex-direction: column;
+  justify-content: flex-end;   /* keep text low */
+  align-items: center;
+  text-align: center;
   gap: 12px;
 }
 
-/* Keep content lower so video is visible */
+/* This class is in your HTML */
 .hero-min{
   min-height: 78vh;
-  justify-content: flex-end;
-  align-items: center;
-  text-align: center;
 }
 
 /* Kicker pill */
@@ -165,45 +167,51 @@ a{ color:inherit; text-decoration:none; }
   font-size: 13px;
   backdrop-filter: blur(8px);
 }
-.kicker span{ color: var(--gold2); font-weight: 900; }
+.kicker span{
+  color: var(--gold2);
+  font-weight: 900;
+}
 
-/* Remove h1 */
+/* Hide old h1 if ever present */
 .hero h1{ display:none !important; }
 
-/* One-line headline only */
+/* =========================
+   ONE LINE HEADLINE ON VIDEO
+   ========================= */
 .hero-headline{
-  font-weight: 900;
-  letter-spacing: -0.4px;
-  line-height: 1.12;
-  font-size: clamp(22px, 2.2vw, 44px);
+  font-size: clamp(18px, 2.2vw, 34px);
+  font-weight: 950;
+  letter-spacing: -0.3px;
   color: rgba(244,247,255,.96);
-  text-shadow: 0 14px 40px rgba(0,0,0,.55);
-  margin-top: 8px;
+  text-shadow: 0 10px 26px rgba(0,0,0,.45);
+  margin-top: 6px;
 }
+
 .hero-headline span{
+  font-weight: 1000;
   color: transparent;
   background: linear-gradient(135deg, var(--gold2), var(--gold));
   -webkit-background-clip: text;
   background-clip: text;
-}
-
-/* Buttons extreme left + extreme right */
-.hero-cta-row{
-  width: 100%;
-  max-width: var(--max);
-  display:flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 14px;
-  margin-top: 16px;
-  padding: 0 22px;
+  /* iPad Safari fix */
+  -webkit-text-fill-color: transparent;
 }
 
 /* =========================
-   BUTTONS
+   CTA ROW (LEFT + RIGHT)
    ========================= */
-.actions{ display:flex; gap:12px; }
+.hero-cta-row{
+  width: 100%;
+  max-width: var(--max);
+  padding: 0 8px;
+  display:flex;
+  align-items:center;
+  justify-content: space-between;
+  gap: 14px;
+  margin-top: 10px;
+}
 
+/* Buttons */
 .btn{
   display:inline-flex;
   align-items:center;
@@ -214,7 +222,7 @@ a{ color:inherit; text-decoration:none; }
   background: rgba(6,10,20,.26);
   color:#fff;
   font-weight: 800;
-  min-width: 240px;
+  min-width: 220px;
 }
 .btn:hover{ background: rgba(255,255,255,.06); }
 
@@ -226,75 +234,75 @@ a{ color:inherit; text-decoration:none; }
 }
 
 /* =========================
-   AFTER HERO: shiny glass statement
+   AFTER HERO “SHINY GLASS”
    ========================= */
 .hero-after{
-  padding: 26px 0 10px;
+  padding: 22px 0 10px;
   border-top: 1px solid rgba(255,255,255,.06);
 }
 
 .after-glass{
   position: relative;
-  max-width: 980px;
-  margin: 0 auto;
-  padding: 18px 20px;
+  padding: 16px 18px;
   border-radius: 18px;
-
-  background: rgba(255,255,255,.06);
-  border: 1px solid rgba(255,255,255,.14);
+  background: linear-gradient(180deg, rgba(255,255,255,.08), rgba(255,255,255,.05));
+  border: 1px solid rgba(255,255,255,.12);
   box-shadow: 0 18px 60px rgba(0,0,0,.35);
   backdrop-filter: blur(10px);
-
   color: rgba(244,247,255,.92);
-  font-size: 16px;
   line-height: 1.65;
-  text-align: center;
-  overflow: hidden;
+  font-weight: 600;
 }
 
-/* Moving shine */
 .after-glass::before{
   content:"";
   position:absolute;
-  top:-40%;
-  left:-30%;
-  width: 70%;
-  height: 180%;
-  transform: rotate(18deg);
-  background: linear-gradient(
-    90deg,
-    rgba(255,255,255,0) 0%,
-    rgba(255,255,255,.12) 45%,
-    rgba(255,255,255,0) 70%
-  );
-  animation: glassShine 4.8s ease-in-out infinite;
+  inset:-1px;
+  border-radius: 18px;
   pointer-events:none;
-  opacity: .9;
+  background:
+    radial-gradient(700px 220px at 15% 20%, rgba(231,182,90,.22), rgba(0,0,0,0) 60%),
+    radial-gradient(700px 220px at 85% 60%, rgba(47,125,255,.18), rgba(0,0,0,0) 60%),
+    linear-gradient(120deg, rgba(231,182,90,.0), rgba(231,182,90,.10), rgba(47,125,255,.08), rgba(231,182,90,0));
+  opacity: .85;
 }
 
-@keyframes glassShine{
-  0%{ transform: translateX(-25%) rotate(18deg); opacity:0; }
-  18%{ opacity:.75; }
-  55%{ transform: translateX(120%) rotate(18deg); opacity:.22; }
-  100%{ transform: translateX(120%) rotate(18deg); opacity:0; }
-}
-
-.after-glass .pill{
+/* chips */
+.pill{
+  position: relative;
   display:inline-block;
-  padding: 5px 10px;
-  border-radius: 999px;
+  padding: 6px 10px;
   margin: 0 2px;
+  border-radius: 999px;
+  font-weight: 900;
+  letter-spacing: .2px;
+  background: rgba(6,10,20,.30);
   border: 1px solid rgba(255,255,255,.14);
-  background: rgba(6,10,20,.35);
-  font-weight: 800;
+  box-shadow: 0 10px 22px rgba(0,0,0,.20);
 }
 
-.after-glass .accent{
-  font-weight: 900;
+/* accent words */
+.accent{
+  position: relative;
+  display:inline-block;
+  font-weight: 1000;
   color: transparent;
   background: linear-gradient(135deg, var(--gold2), var(--gold));
   -webkit-background-clip: text;
   background-clip: text;
+  -webkit-text-fill-color: transparent; /* iPad Safari fix */
+}
+
+.accent::after{
+  content:"";
+  position:absolute;
+  left:0;
+  bottom:-4px;
+  width:100%;
+  height:2px;
+  border-radius:999px;
+  background: linear-gradient(90deg, rgba(231,182,90,0), rgba(231,182,90,.9), rgba(231,182,90,0));
+  opacity:.55;
 }
 
 /* =========================
@@ -328,6 +336,7 @@ h2{ font-size: 30px; margin: 0 0 10px; }
   gap: 18px;
   margin-top: 18px;
 }
+
 @media (min-width: 1025px){
   .grid{ grid-template-columns: repeat(3, 1fr); }
 }
@@ -345,8 +354,6 @@ h2{ font-size: 30px; margin: 0 0 10px; }
   border: 1px solid rgba(255,255,255,.10);
   box-shadow: var(--shadow);
   transition: transform .25s ease, border-color .25s ease, background .25s ease;
-  opacity:0;
-  animation: fadeUp .65s ease forwards;
 }
 .card:hover{
   transform: translateY(-4px);
@@ -363,10 +370,12 @@ h2{ font-size: 30px; margin: 0 0 10px; }
   color: var(--gold2);
 }
 
+/* Stagger */
 @keyframes fadeUp{
   from{ opacity:0; transform: translateY(14px); }
   to{ opacity:1; transform: translateY(0); }
 }
+.card{ opacity:0; animation: fadeUp .65s ease forwards; }
 .card:nth-child(1){ animation-delay: .05s; }
 .card:nth-child(2){ animation-delay: .12s; }
 .card:nth-child(3){ animation-delay: .19s; }
@@ -376,8 +385,13 @@ h2{ font-size: 30px; margin: 0 0 10px; }
 .card:nth-child(7){ animation-delay: .47s; }
 .card:nth-child(8){ animation-delay: .54s; }
 
+@media (prefers-reduced-motion: reduce){
+  .card{ opacity:1; animation:none; }
+  .card:hover{ transform:none; }
+}
+
 /* =========================
-   SPLIT (Founder)
+   FOUNDER / SPLIT
    ========================= */
 .split{
   display:grid;
@@ -399,7 +413,6 @@ h2{ font-size: 30px; margin: 0 0 10px; }
     0 0 0 1px rgba(231,182,90,.08) inset;
 }
 
-/* Founder LinkedIn overlay */
 .founder-photo{ position: relative; display:inline-block; }
 .founder-linkedin{
   position:absolute;
@@ -455,10 +468,28 @@ h2{ font-size: 30px; margin: 0 0 10px; }
 @media (max-width: 860px){
   .split{ grid-template-columns: 1fr; gap: 20px; }
   .portrait{ max-width: 520px; margin: 0 auto; }
+}
+
+@media (max-width: 768px){
+  /* keep video ON; reduce text dominance */
+  .hero{ min-height: 86vh; }
+  .hero-min{ min-height: 86vh; }
+  .container.inner{ padding: 18px 16px 18px; }
+  .kicker{ font-size: 12px; }
+
+  .hero-headline{
+    font-size: 20px;
+    padding: 0 8px;
+  }
 
   .hero-cta-row{
-    max-width: 100%;
-    padding: 0 16px;
+    padding: 0 6px;
+    gap: 10px;
+  }
+  .btn{
+    min-width: 0;
+    width: 48%;
+    padding: 13px 14px;
   }
 }
 
@@ -475,28 +506,17 @@ h2{ font-size: 30px; margin: 0 0 10px; }
     font-size: 13px;
   }
 
-  .hero{ min-height: 86vh; }
-
-  .container.inner{
-    padding: 22px 16px 24px;
-  }
-
-  /* On mobile stack buttons */
+  /* hero CTA: still left/right but fits */
   .hero-cta-row{
-    flex-direction: column;
-    align-items: stretch;
-    justify-content: flex-end;
-    gap: 12px;
     padding: 0;
-    width: 100%;
+  }
+  .btn{
+    width: 48%;
+    padding: 14px 12px;
+    border-radius: 14px;
   }
 
-  .btn{
-    width: 100%;
-    min-width: 0;
-    justify-content: center;
-    padding: 14px 16px;
-  }
+  .cols{ grid-template-columns: 1fr; }
 
   .founder-linkedin{
     bottom:14px;
@@ -504,67 +524,25 @@ h2{ font-size: 30px; margin: 0 0 10px; }
     font-size: 13px;
     padding: 9px 12px;
   }
-
-  .cols{ grid-template-columns: 1fr; }
 }
 
-/* Reduced motion: no video, use poster */
+/* =========================
+   iPad/tablet specific: make sure CTA hits corners
+   ========================= */
+@media (min-width: 768px) and (max-width: 1180px){
+  .hero-cta-row{
+    max-width: none;
+    padding: 0 18px;
+    justify-content: space-between;
+  }
+}
+
+/* Reduced motion */
 @media (prefers-reduced-motion: reduce){
   .hero-video-bg{ display:none; }
-  .hero-video{
+  .hero{
     background-image: url("assets/images/hero/hero-home.jpg");
     background-size: cover;
     background-position: center;
   }
-  .card{ opacity:1; animation:none; }
-  .card:hover{ transform:none; }
-  .after-glass::before{ animation:none; opacity:.12; }
-}
-/* iPad Safari fix: gradient text sometimes looks plain without this */
-.hero-headline span,
-.after-glass .accent{
-  -webkit-text-fill-color: transparent;
-}
-/* =========================
-   iPad / Tablet hero tuning
-   ========================= */
-@media (min-width: 768px) and (max-width: 1180px){
-
-  /* Show more video area */
-  .hero{ min-height: 72vh; }
-  .hero-min{
-    min-height: 72vh;
-    padding: 22px 0 22px !important;
-  }
-
-  /* Make the headline smaller so it doesn't eat the video */
-  .hero-headline{
-    font-size: clamp(18px, 2vw, 30px) !important;
-    margin-top: 6px !important;
-  }
-
-  /* Kicker slightly smaller */
-  .kicker{
-    font-size: 12px !important;
-    padding: 6px 10px !important;
-  }
-
-  /* CTA row truly goes to left/right corners of viewport */
-  .hero-cta-row{
-    width: 100% !important;
-    max-width: none !important;
-    padding: 0 18px !important;        /* edge padding */
-    margin-top: 12px !important;
-    justify-content: space-between !important;
-  }
-
-  /* Buttons not too huge on iPad */
-  .hero-cta-row .btn{
-    min-width: 220px !important;
-  }
-}
-.hero::before{
-  background:
-    radial-gradient(1200px 600px at 20% 40%, rgba(0,0,0,.06), rgba(0,0,0,0) 60%),
-    linear-gradient(180deg, rgba(6,10,20,.08) 0%, rgba(6,10,20,.24) 55%, rgba(6,10,20,.52) 100%) !important;
 }
