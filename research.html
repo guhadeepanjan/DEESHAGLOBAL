@@ -3,76 +3,182 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Research | Deesha Global</title>
-<meta name="description" content="Research and insights by Deesha Global on global education, careers, migration and technology.">
+
+<title>Research & Insights | Deesha Global</title>
+
+<meta name="description" content="Research and insights from Deesha Global on education, global careers, mobility and technology.">
 
 <link rel="stylesheet" href="assets/css/style.css">
 
-</head>
+<style>
 
+.research-hero{
+padding:120px 20px;
+text-align:center;
+background:#0b0f19;
+color:white;
+}
+
+.research-hero h1{
+font-size:42px;
+margin-bottom:10px;
+}
+
+.research-hero p{
+opacity:.8;
+max-width:700px;
+margin:auto;
+}
+
+.research-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:30px;
+margin-top:50px;
+}
+
+.research-card{
+background:white;
+padding:30px;
+border-radius:10px;
+box-shadow:0 10px 25px rgba(0,0,0,0.08);
+transition:.3s;
+}
+
+.research-card:hover{
+transform:translateY(-5px);
+}
+
+.research-card h3{
+margin-top:10px;
+}
+
+.research-meta{
+font-size:12px;
+color:#888;
+}
+
+.more{
+display:inline-block;
+margin-top:15px;
+font-weight:600;
+}
+
+</style>
+
+</head>
 <body>
 
+<!-- HEADER -->
 <div class="header">
-  <div class="container">
-    <div class="nav">
+<div class="container">
+<div class="nav">
 
-      <a class="brand" href="index.html">
-        <img src="assets/images/brand/logo-primary.png">
-        <div class="name">DEESHA GLOBAL</div>
-      </a>
+<a class="brand" href="index.html">
+<img src="assets/images/brand/logo-primary.png">
+<div class="name">DEESHA GLOBAL</div>
+</a>
 
-      <div class="links">
-        <a href="about.html">About</a>
-        <a href="services.html">Services</a>
-        <a href="how-we-work.html">How We Work</a>
-        <a href="trust.html">Trust</a>
-        <a href="research.html">Research</a>
-        <a class="cta" href="contact.html">Get Started</a>
-      </div>
-
-    </div>
-  </div>
+<div class="links">
+<a href="about.html">About</a>
+<a href="services.html">Services</a>
+<a href="how-we-work.html">How We Work</a>
+<a href="research.html">Research</a>
+<a href="trust.html">Trust</a>
+<a class="cta" href="contact.html">Get Started</a>
 </div>
 
+</div>
+</div>
+</div>
 
-<div class="section">
-<div class="container">
+<!-- HERO -->
+
+<section class="research-hero">
 
 <h1>Research & Insights</h1>
 
-<p class="lead">
-At Deesha Global we conduct independent research on global careers, education mobility, talent migration, and emerging technology ecosystems.  
-This section publishes insights, reports and policy perspectives to help individuals and institutions make informed decisions.
+<p>
+Thought leadership from Deesha Global on education mobility,
+global careers, digital transformation and emerging opportunities.
 </p>
 
-<br>
+</section>
 
-<div class="grid">
+<!-- RESEARCH SECTION -->
 
-<div class="card">
-<h3>Global Talent Mobility Trends</h3>
-<p class="small">An analysis of global migration patterns and how professionals are moving across Singapore, GCC, UK and Australia.</p>
-<a class="more" href="#">Read Research →</a>
+<div class="container">
+
+<div class="research-grid">
+
+<article class="research-card">
+
+<div class="research-meta">
+Global Careers · 2026
 </div>
 
-<div class="card">
-<h3>The Future of Global Education</h3>
-<p class="small">How international education is evolving with technology, AI learning tools and cross-border learning ecosystems.</p>
-<a class="more" href="#">Read Research →</a>
+<h3>
+The Future of Global Careers for Indian Professionals
+</h3>
+
+<p>
+An analysis of hiring trends across Singapore, GCC and Europe,
+highlighting sectors with the highest demand for skilled Indian talent.
+</p>
+
+<a class="more" href="#">
+Read Research →
+</a>
+
+</article>
+
+<article class="research-card">
+
+<div class="research-meta">
+Education · 2026
 </div>
 
-<div class="card">
-<h3>Careers Without Borders</h3>
-<p class="small">A deep dive into how professionals from South Asia are accessing international opportunities and building global careers.</p>
-<a class="more" href="#">Read Research →</a>
+<h3>
+Singapore Education Pathways for International Students
+</h3>
+
+<p>
+A comprehensive guide to Singapore's education system,
+private schools and university pathways for global students.
+</p>
+
+<a class="more" href="#">
+Read Research →
+</a>
+
+</article>
+
+<article class="research-card">
+
+<div class="research-meta">
+Technology · 2026
 </div>
+
+<h3>
+AI & The Future of Career Advisory Platforms
+</h3>
+
+<p>
+How artificial intelligence will transform the way students
+and professionals plan their global careers.
+</p>
+
+<a class="more" href="#">
+Read Research →
+</a>
+
+</article>
 
 </div>
 
 </div>
-</div>
 
-
+<!-- FOOTER -->
 
 <div class="footer">
 <div class="container">
@@ -80,24 +186,35 @@ This section publishes insights, reports and policy perspectives to help individ
 <div class="cols">
 
 <div>
-<div style="font-weight:900">DEESHA GLOBAL PTE. LTD.</div>
-<div class="small">People • Education • Technology</div>
-<div class="small">Email: info@deesha-global.com</div>
-</div>
+
+<div style="display:flex;gap:10px;align-items:center">
+
+<img src="assets/images/brand/logo-primary.png"
+style="height:36px;width:36px;border-radius:10px">
 
 <div>
-<div style="font-weight:900;margin-bottom:8px">Quick Links</div>
-<div class="small"><a href="services.html">Services</a></div>
-<div class="small"><a href="research.html">Research</a></div>
-<div class="small"><a href="contact.html">Contact</a></div>
+<div style="font-weight:900">
+DEESHA GLOBAL PTE. LTD.
 </div>
 
-<div>
-<div class="small">© 2026 Deesha Global Pte. Ltd.</div>
+<div class="small">
+People • Education • Technology
 </div>
 
 </div>
+</div>
 
+<div class="small" style="margin-top:10px">
+Founder & Director: Shashwati Guha
+</div>
+
+<div class="small">
+Email: info@deesha-global.com
+</div>
+
+</div>
+
+</div>
 </div>
 </div>
 
