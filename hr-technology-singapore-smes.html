@@ -1,1028 +1,1548 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>HR Technology & Automation in Singapore SMEs — Shashwati Guha | Deesha Global</title>
-  <meta name="description" content="A research paper by Shashwati Guha, Founder & Director of Deesha Global Pte. Ltd., on HR technology adoption among Singapore SMEs — from survival instinct to strategic imperative.">
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
-
-  <style>
-    /* ── CSS Variables ────────────────────────────────────────────────────────── */
-    :root {
-      --navy:       #0F2A5C;
-      --navy-mid:   #1B3D73;
-      --royal:      #1D4ED8;
-      --teal:       #0D9488;
-      --teal-light: #CCFBF1;
-      --gold:       #B45309;
-      --gold-light: #FEF3C7;
-      --cream:      #FDFBF7;
-      --warm-white: #F8F6F1;
-      --slate:      #334155;
-      --mid-slate:  #475569;
-      --light-slate:#94A3B8;
-      --silver:     #E2E8F0;
-      --ink:        #1E293B;
-
-      --serif:  'Cormorant Garamond', Georgia, serif;
-      --sans:   'DM Sans', system-ui, sans-serif;
-      --mono:   'DM Mono', monospace;
-
-      --max-w: 860px;
-    }
-
-    /* ── Reset & Base ─────────────────────────────────────────────────────────── */
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-    html { scroll-behavior: smooth; font-size: 18px; }
-
-    body {
-      background: var(--cream);
-      color: var(--ink);
-      font-family: var(--serif);
-      line-height: 1.75;
-      -webkit-font-smoothing: antialiased;
-      overflow-x: hidden;
-    }
-
-    /* ── Scroll progress bar ──────────────────────────────────────────────────── */
-    #progress-bar {
-      position: fixed;
-      top: 0; left: 0;
-      height: 3px;
-      width: 0%;
-      background: linear-gradient(90deg, var(--teal), var(--gold));
-      z-index: 1000;
-      transition: width 0.1s linear;
-    }
-
-    /* ── Sticky nav ───────────────────────────────────────────────────────────── */
-    nav {
-      position: sticky;
-      top: 0;
-      z-index: 900;
-      background: rgba(15, 42, 92, 0.97);
-      backdrop-filter: blur(12px);
-      border-bottom: 1px solid rgba(255,255,255,0.08);
-      padding: 0 2rem;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      height: 56px;
-    }
-
-    .nav-brand {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      text-decoration: none;
-    }
-
-    .nav-logo-mark {
-      width: 28px; height: 28px;
-      background: linear-gradient(135deg, var(--teal), var(--royal));
-      border-radius: 6px;
-      display: flex; align-items: center; justify-content: center;
-      font-family: var(--serif);
-      font-weight: 700;
-      font-size: 14px;
-      color: #fff;
-      letter-spacing: -0.5px;
-      flex-shrink: 0;
-    }
-
-    .nav-site {
-      font-family: var(--sans);
-      font-size: 13px;
-      font-weight: 500;
-      color: rgba(255,255,255,0.85);
-      letter-spacing: 0.02em;
-    }
-
-    .nav-tag {
-      font-family: var(--sans);
-      font-size: 11px;
-      font-weight: 500;
-      color: var(--teal-light);
-      background: rgba(13,148,136,0.18);
-      border: 1px solid rgba(13,148,136,0.3);
-      border-radius: 100px;
-      padding: 3px 10px;
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
-      white-space: nowrap;
-    }
-
-    /* ── Hero / Cover ─────────────────────────────────────────────────────────── */
-    .cover {
-      background: var(--navy);
-      color: #fff;
-      position: relative;
-      overflow: hidden;
-      padding: 100px 2rem 80px;
-    }
-
-    .cover::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background:
-        radial-gradient(ellipse 80% 60% at 70% 30%, rgba(29,78,216,0.25) 0%, transparent 70%),
-        radial-gradient(ellipse 50% 40% at 20% 80%, rgba(13,148,136,0.2) 0%, transparent 60%);
-      pointer-events: none;
-    }
-
-    .cover::after {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background-image:
-        repeating-linear-gradient(0deg, transparent, transparent 79px, rgba(255,255,255,0.025) 79px, rgba(255,255,255,0.025) 80px),
-        repeating-linear-gradient(90deg, transparent, transparent 79px, rgba(255,255,255,0.02) 79px, rgba(255,255,255,0.02) 80px);
-      pointer-events: none;
-    }
-
-    .cover-inner {
-      max-width: var(--max-w);
-      margin: 0 auto;
-      position: relative;
-      z-index: 2;
-    }
-
-    .cover-meta-row {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      margin-bottom: 36px;
-      flex-wrap: wrap;
-    }
-
-    .cover-label-pill {
-      font-family: var(--sans);
-      font-size: 11px;
-      font-weight: 500;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      color: var(--teal-light);
-      background: rgba(13,148,136,0.2);
-      border: 1px solid rgba(13,148,136,0.35);
-      border-radius: 100px;
-      padding: 3px 12px;
-    }
-
-    .cover-label {
-      font-family: var(--mono);
-      font-size: 11px;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      color: rgba(255,255,255,0.45);
-    }
-
-    .cover-dot { color: rgba(255,255,255,0.2); font-size: 10px; }
-
-    .read-time {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      font-family: var(--mono);
-      font-size: 11px;
-      color: rgba(255,255,255,0.4);
-      letter-spacing: 0.06em;
-    }
-
-    .read-time-dot { width: 4px; height: 4px; border-radius: 50%; background: var(--teal); display: inline-block; }
-
-    .cover-eyebrow {
-      font-family: var(--sans);
-      font-size: 12px;
-      font-weight: 500;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: var(--teal-light);
-      margin-bottom: 20px;
-      opacity: 0;
-      transform: translateY(12px);
-      animation: fadeUp 0.7s ease forwards 0.1s;
-    }
-
-    .cover-title {
-      font-family: var(--serif);
-      font-size: clamp(2.4rem, 5vw, 3.8rem);
-      font-weight: 600;
-      line-height: 1.15;
-      letter-spacing: -0.01em;
-      margin-bottom: 16px;
-      opacity: 0;
-      transform: translateY(16px);
-      animation: fadeUp 0.8s ease forwards 0.2s;
-    }
-
-    .cover-title em { font-style: italic; color: rgba(191,219,254,0.9); }
-
-    .cover-subtitle {
-      font-family: var(--serif);
-      font-size: 1.3rem;
-      font-weight: 400;
-      font-style: italic;
-      color: rgba(255,255,255,0.55);
-      margin-bottom: 48px;
-      opacity: 0;
-      transform: translateY(14px);
-      animation: fadeUp 0.8s ease forwards 0.35s;
-    }
-
-    .cover-divider {
-      width: 48px;
-      height: 2px;
-      background: linear-gradient(90deg, var(--teal), transparent);
-      margin-bottom: 36px;
-      opacity: 0;
-      animation: fadeUp 0.6s ease forwards 0.45s;
-    }
-
-    .cover-author-row {
-      display: flex;
-      align-items: center;
-      gap: 16px;
-      margin-bottom: 48px;
-      opacity: 0;
-      transform: translateY(10px);
-      animation: fadeUp 0.7s ease forwards 0.5s;
-    }
-
-    .author-avatar {
-      width: 48px; height: 48px;
-      border-radius: 50%;
-      background: linear-gradient(135deg, var(--teal), var(--royal));
-      display: flex; align-items: center; justify-content: center;
-      font-family: var(--serif);
-      font-size: 18px;
-      font-weight: 600;
-      color: #fff;
-      flex-shrink: 0;
-      border: 2px solid rgba(255,255,255,0.15);
-    }
-
-    .author-name {
-      font-family: var(--sans);
-      font-weight: 500;
-      font-size: 15px;
-      color: #fff;
-      line-height: 1.3;
-    }
-
-    .author-title {
-      font-family: var(--sans);
-      font-size: 13px;
-      color: rgba(255,255,255,0.5);
-      line-height: 1.4;
-    }
-
-    .cover-stats {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1px;
-      background: rgba(255,255,255,0.08);
-      border-radius: 12px;
-      overflow: hidden;
-      opacity: 0;
-      transform: translateY(16px);
-      animation: fadeUp 0.8s ease forwards 0.65s;
-    }
-
-    .cover-stat {
-      background: rgba(255,255,255,0.04);
-      padding: 24px 20px;
-      text-align: center;
-      transition: background 0.2s;
-    }
-
-    .cover-stat:hover { background: rgba(255,255,255,0.08); }
-
-    .stat-value {
-      font-family: var(--serif);
-      font-size: 2.4rem;
-      font-weight: 600;
-      color: var(--teal-light);
-      line-height: 1.1;
-      display: block;
-    }
-
-    .stat-label {
-      font-family: var(--sans);
-      font-size: 12px;
-      color: rgba(255,255,255,0.45);
-      margin-top: 6px;
-      line-height: 1.4;
-    }
-
-    /* ── Article Layout ───────────────────────────────────────────────────────── */
-    .article-wrap {
-      max-width: var(--max-w);
-      margin: 0 auto;
-      padding: 0 2rem;
-    }
-
-    .abstract-section {
-      border-left: 3px solid var(--teal);
-      background: linear-gradient(135deg, rgba(13,148,136,0.06), rgba(13,148,136,0.02));
-      padding: 32px 36px;
-      margin: 60px 0 20px;
-      border-radius: 0 8px 8px 0;
-      opacity: 0;
-      transform: translateY(20px);
-      transition: opacity 0.7s ease, transform 0.7s ease;
-    }
-    .abstract-section.visible { opacity: 1; transform: translateY(0); }
-
-    .abstract-label {
-      font-family: var(--mono);
-      font-size: 10.5px;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: var(--teal);
-      font-weight: 500;
-      margin-bottom: 12px;
-    }
-
-    .abstract-text {
-      font-size: 1.15rem;
-      font-style: italic;
-      color: var(--slate);
-      line-height: 1.8;
-    }
-
-    .meta-strip {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1px;
-      background: var(--silver);
-      border: 1px solid var(--silver);
-      border-radius: 8px;
-      overflow: hidden;
-      margin-bottom: 72px;
-    }
-
-    .meta-cell { background: var(--warm-white); padding: 16px 20px; text-align: center; }
-
-    .meta-cell-label {
-      font-family: var(--mono);
-      font-size: 10px;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      color: var(--light-slate);
-      display: block;
-      margin-bottom: 4px;
-    }
-
-    .meta-cell-value {
-      font-family: var(--sans);
-      font-size: 13px;
-      font-weight: 600;
-      color: var(--navy);
-    }
-
-    .toc {
-      background: var(--warm-white);
-      border: 1px solid var(--silver);
-      border-radius: 10px;
-      padding: 28px 32px;
-      margin-bottom: 60px;
-    }
-
-    .toc-label {
-      font-family: var(--mono);
-      font-size: 10px;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: var(--light-slate);
-      margin-bottom: 16px;
-      display: block;
-    }
-
-    .toc ol {
-      list-style: none;
-      padding: 0;
-      counter-reset: toc;
-      columns: 2;
-      column-gap: 32px;
-    }
-
-    .toc ol li { counter-increment: toc; margin-bottom: 10px; break-inside: avoid; }
-
-    .toc ol li a {
-      font-family: var(--sans);
-      font-size: 13.5px;
-      color: var(--slate);
-      text-decoration: none;
-      display: flex;
-      align-items: baseline;
-      gap: 8px;
-      transition: color 0.2s;
-    }
-
-    .toc ol li a:hover { color: var(--royal); }
-
-    .toc-num {
-      font-family: var(--mono);
-      font-size: 10.5px;
-      color: var(--teal);
-      flex-shrink: 0;
-    }
-
-    @media (max-width: 600px) { .toc ol { columns: 1; } }
-
-    .section {
-      margin-bottom: 72px;
-      opacity: 0;
-      transform: translateY(24px);
-      transition: opacity 0.7s ease, transform 0.7s ease;
-    }
-    .section.visible { opacity: 1; transform: translateY(0); }
-
-    .section-head {
-      display: flex;
-      align-items: baseline;
-      gap: 14px;
-      border-bottom: 1.5px solid var(--silver);
-      padding-bottom: 14px;
-      margin-bottom: 32px;
-    }
-
-    .section-num {
-      font-family: var(--mono);
-      font-size: 11px;
-      font-weight: 500;
-      color: var(--teal);
-      letter-spacing: 0.08em;
-      flex-shrink: 0;
-      margin-top: 4px;
-    }
-
-    .section-title {
-      font-size: 1.65rem;
-      font-weight: 600;
-      color: var(--navy);
-      line-height: 1.25;
-      letter-spacing: -0.01em;
-    }
-
-    p.body-text {
-      font-size: 1.05rem;
-      line-height: 1.85;
-      color: var(--slate);
-      margin-bottom: 22px;
-    }
-    p.body-text:last-child { margin-bottom: 0; }
-
-    .pull-quote {
-      border-left: 4px solid var(--royal);
-      background: linear-gradient(135deg, rgba(29,78,216,0.06), rgba(29,78,216,0.02));
-      padding: 28px 36px;
-      margin: 36px 0;
-      border-radius: 0 8px 8px 0;
-      position: relative;
-    }
-
-    .pull-quote::before {
-      content: '\201C';
-      font-size: 5rem;
-      color: rgba(29,78,216,0.12);
-      position: absolute;
-      top: -10px; left: 20px;
-      line-height: 1;
-      pointer-events: none;
-    }
-
-    .pull-quote p {
-      font-size: 1.3rem;
-      font-style: italic;
-      font-weight: 500;
-      color: var(--royal);
-      line-height: 1.65;
-    }
-
-    .pull-quote.gold { border-left-color: var(--gold); background: linear-gradient(135deg, rgba(180,83,9,0.06), rgba(180,83,9,0.02)); }
-    .pull-quote.gold::before { color: rgba(180,83,9,0.1); }
-    .pull-quote.gold p { color: var(--gold); }
-
-    .pull-quote.teal { border-left-color: var(--teal); background: linear-gradient(135deg, rgba(13,148,136,0.07), rgba(13,148,136,0.02)); }
-    .pull-quote.teal::before { color: rgba(13,148,136,0.12); }
-    .pull-quote.teal p { color: var(--teal); }
-
-    .stat-row {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 12px;
-      margin: 32px 0;
-    }
-
-    .stat-card {
-      border: 1px solid var(--silver);
-      border-radius: 10px;
-      padding: 24px 16px;
-      text-align: center;
-      background: var(--warm-white);
-      transition: transform 0.2s, box-shadow 0.2s;
-    }
-
-    .stat-card:hover { transform: translateY(-3px); box-shadow: 0 8px 24px rgba(0,0,0,0.07); }
-
-    .stat-card .val {
-      font-size: 2.1rem;
-      font-weight: 600;
-      line-height: 1.1;
-      display: block;
-    }
-
-    .stat-card .val.blue { color: var(--royal); }
-    .stat-card .val.teal { color: var(--teal); }
-    .stat-card .val.gold { color: var(--gold); }
-    .stat-card .val.orange { color: #C2410C; }
-
-    .stat-card .lbl {
-      font-family: var(--sans);
-      font-size: 12px;
-      color: var(--mid-slate);
-      margin-top: 8px;
-      line-height: 1.45;
-    }
-
-    .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; margin: 32px 0; }
-
-    .col-card { padding: 24px 24px 20px; border-radius: 10px; border: 1px solid var(--silver); }
-    .col-card.blue-tint  { background: rgba(29,78,216,0.04); border-color: rgba(29,78,216,0.15); }
-    .col-card.teal-tint  { background: rgba(13,148,136,0.05); border-color: rgba(13,148,136,0.18); }
-    .col-card.gold-tint  { background: rgba(180,83,9,0.04); border-color: rgba(180,83,9,0.15); }
-    .col-card.purple-tint { background: rgba(109,40,217,0.04); border-color: rgba(109,40,217,0.15); }
-    .col-card.orange-tint { background: rgba(194,65,12,0.04); border-color: rgba(194,65,12,0.15); }
-    .col-card.green-tint  { background: rgba(21,128,61,0.04); border-color: rgba(21,128,61,0.15); }
-
-    .col-card h4 {
-      font-family: var(--sans);
-      font-size: 14px;
-      font-weight: 600;
-      letter-spacing: 0.01em;
-      margin-bottom: 12px;
-    }
-
-    .col-card h4.blue  { color: var(--royal); }
-    .col-card h4.teal  { color: var(--teal); }
-    .col-card h4.gold  { color: var(--gold); }
-    .col-card h4.purple { color: #6D28D9; }
-    .col-card h4.orange { color: #C2410C; }
-    .col-card h4.green  { color: #15803D; }
-
-    .col-card p, .col-card li {
-      font-size: 0.97rem;
-      line-height: 1.8;
-      color: var(--slate);
-    }
-
-    .col-card ul { list-style: none; padding: 0; margin-top: 4px; }
-    .col-card ul li { padding-left: 18px; position: relative; margin-bottom: 6px; }
-    .col-card ul li::before { content: '▸'; position: absolute; left: 0; color: var(--teal); font-size: 10px; top: 6px; }
-
-    .insight-box {
-      display: grid;
-      grid-template-columns: 48px 1fr;
-      border-radius: 10px;
-      overflow: hidden;
-      margin-bottom: 16px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-    }
-
-    .insight-num {
-      display: flex; align-items: flex-start; justify-content: center;
-      padding-top: 20px;
-      font-size: 1.1rem;
-      font-weight: 700;
-      color: #fff;
-    }
-    .insight-num.blue   { background: var(--royal); }
-    .insight-num.teal   { background: var(--teal); }
-    .insight-num.gold   { background: var(--gold); }
-    .insight-num.purple { background: #6D28D9; }
-    .insight-num.green  { background: #15803D; }
-
-    .insight-body { padding: 18px 22px; }
-    .insight-body.blue   { background: rgba(29,78,216,0.05); }
-    .insight-body.teal   { background: rgba(13,148,136,0.06); }
-    .insight-body.gold   { background: rgba(180,83,9,0.05); }
-    .insight-body.purple { background: rgba(109,40,217,0.05); }
-    .insight-body.green  { background: rgba(21,128,61,0.05); }
-
-    .insight-heading {
-      font-family: var(--sans);
-      font-size: 14px;
-      font-weight: 600;
-      margin-bottom: 6px;
-    }
-    .insight-heading.blue   { color: var(--royal); }
-    .insight-heading.teal   { color: var(--teal); }
-    .insight-heading.gold   { color: var(--gold); }
-    .insight-heading.purple { color: #6D28D9; }
-    .insight-heading.green  { color: #15803D; }
-
-    .insight-text {
-      font-size: 0.95rem;
-      line-height: 1.78;
-      color: var(--mid-slate);
-    }
-
-    .sidebar-box {
-      border: 1px solid var(--silver);
-      border-radius: 10px;
-      padding: 28px 32px;
-      background: var(--warm-white);
-      margin: 28px 0;
-    }
-    .sidebar-box.slate { background: #F8FAFC; border-color: #CBD5E1; }
-    .sidebar-box.orange { background: rgba(194,65,12,0.04); border-color: rgba(194,65,12,0.2); }
-
-    .sidebar-title {
-      font-family: var(--sans);
-      font-size: 14px;
-      font-weight: 600;
-      color: var(--navy);
-      margin-bottom: 16px;
-      padding-bottom: 10px;
-      border-bottom: 1px solid var(--silver);
-    }
-    .sidebar-title.orange-txt { color: #C2410C; border-color: rgba(194,65,12,0.2); }
-
-    .sidebar-box ul { list-style: none; padding: 0; }
-    .sidebar-box ul li {
-      font-size: 0.97rem;
-      line-height: 1.75;
-      color: var(--slate);
-      padding-left: 22px;
-      position: relative;
-      margin-bottom: 8px;
-    }
-    .sidebar-box ul li::before {
-      content: '▸';
-      position: absolute;
-      left: 0;
-      font-size: 10px;
-      top: 7px;
-      color: var(--navy);
-    }
-    .sidebar-box.orange ul li::before { color: #C2410C; }
-
-    .pet-framework { margin: 28px 0; display: flex; flex-direction: column; gap: 16px; }
-
-    .pet-item {
-      display: grid;
-      grid-template-columns: 56px 1fr;
-      border-radius: 10px;
-      overflow: hidden;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.06);
-    }
-
-    .pet-letter {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 2rem;
-      font-weight: 700;
-      color: #fff;
-    }
-    .pet-letter.blue   { background: linear-gradient(180deg, #1D4ED8, #1e40af); }
-    .pet-letter.teal   { background: linear-gradient(180deg, #0D9488, #0f766e); }
-    .pet-letter.gold   { background: linear-gradient(180deg, #B45309, #92400e); }
-
-    .pet-content { padding: 20px 26px; }
-    .pet-content.blue   { background: rgba(29,78,216,0.05); }
-    .pet-content.teal   { background: rgba(13,148,136,0.06); }
-    .pet-content.gold   { background: rgba(180,83,9,0.05); }
-
-    .pet-content h4 {
-      font-family: var(--sans);
-      font-size: 13px;
-      font-weight: 600;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      margin-bottom: 8px;
-    }
-    .pet-content h4.blue   { color: var(--royal); }
-    .pet-content h4.teal   { color: var(--teal); }
-    .pet-content h4.gold   { color: var(--gold); }
-
-    .pet-content p {
-      font-size: 0.97rem;
-      line-height: 1.8;
-      color: var(--mid-slate);
-    }
-
-    .author-card {
-      background: var(--navy);
-      border-radius: 12px;
-      padding: 44px 44px 36px;
-      margin-top: 80px;
-      color: #fff;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .author-card::before {
-      content: '';
-      position: absolute;
-      top: -40px; right: -40px;
-      width: 200px; height: 200px;
-      background: radial-gradient(circle, rgba(13,148,136,0.25), transparent 70%);
-      pointer-events: none;
-    }
-
-    .author-card-top { display: flex; align-items: center; gap: 20px; margin-bottom: 24px; }
-
-    .author-card-avatar {
-      width: 64px; height: 64px;
-      border-radius: 50%;
-      background: linear-gradient(135deg, var(--teal), #1D4ED8);
-      display: flex; align-items: center; justify-content: center;
-      font-size: 24px;
-      font-weight: 600;
-      color: #fff;
-      flex-shrink: 0;
-      border: 2px solid rgba(255,255,255,0.15);
-    }
-
-    .author-card-name { font-size: 1.5rem; font-weight: 500; line-height: 1.2; }
-    .author-card-role { font-family: var(--sans); font-size: 13px; color: rgba(255,255,255,0.5); margin-top: 4px; }
-
-    .author-card-bio {
-      font-size: 1rem;
-      font-style: italic;
-      color: rgba(255,255,255,0.65);
-      line-height: 1.8;
-      margin-bottom: 28px;
-      padding-top: 20px;
-      border-top: 1px solid rgba(255,255,255,0.1);
-    }
-
-    .author-card-links { display: flex; gap: 12px; flex-wrap: wrap; }
-
-    .author-link {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      font-family: var(--sans);
-      font-size: 13px;
-      font-weight: 500;
-      color: var(--teal-light);
-      text-decoration: none;
-      border: 1px solid rgba(13,148,136,0.35);
-      border-radius: 100px;
-      padding: 6px 16px;
-      background: rgba(13,148,136,0.1);
-      transition: background 0.2s, border-color 0.2s;
-      white-space: nowrap;
-    }
-
-    .author-link:hover { background: rgba(13,148,136,0.25); border-color: rgba(13,148,136,0.6); }
-
-    .references {
-      margin-top: 60px;
-      padding-top: 32px;
-      border-top: 1px solid var(--silver);
-      margin-bottom: 80px;
-    }
-
-    .references h3 {
-      font-family: var(--mono);
-      font-size: 11px;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      color: var(--light-slate);
-      margin-bottom: 16px;
-    }
-
-    .references p {
-      font-family: var(--sans);
-      font-size: 13px;
-      color: var(--mid-slate);
-      line-height: 1.7;
-    }
-
-    @keyframes fadeUp { to { opacity: 1; transform: translateY(0); } }
-
-    /* ── Responsive ────────────────────────────────────────────────────────────── */
-    @media (max-width: 700px) {
-      .stat-row     { grid-template-columns: 1fr; }
-      .two-col      { grid-template-columns: 1fr; gap: 16px; }
-      .meta-strip   { grid-template-columns: 1fr; }
-      .author-card  { padding: 28px 24px; }
-      .pull-quote   { padding: 20px 24px; }
-      nav           { padding: 0 1rem; }
-      .article-wrap { padding: 0 1.25rem; }
-      .cover-stats  { grid-template-columns: 1fr; }
-      .stat-value   { font-size: 1.7rem; }
-    }
-
-    @media (max-width: 500px) {
-      .cover { padding: 70px 1.25rem 60px; }
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HR Technology & Automation in Singapore SMEs — Shashwati Guha | Deesha Global</title>
+<meta name="description" content="A research paper by Shashwati Guha, Founder & Director of Deesha Global Pte. Ltd., on HR technology adoption among Singapore SMEs — from survival instinct to strategic imperative.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<style>
+/* ── CSS Variables ────────────────────────────────────────────────────────── */
+:root {
+  --navy:       #0F2A5C;
+  --navy-mid:   #1B3D73;
+  --royal:      #1D4ED8;
+  --teal:       #0D9488;
+  --teal-light: #CCFBF1;
+  --gold:       #B45309;
+  --gold-light: #FEF3C7;
+  --cream:      #FDFBF7;
+  --warm-white: #F8F6F1;
+  --slate:      #334155;
+  --mid-slate:  #475569;
+  --light-slate:#94A3B8;
+  --silver:     #E2E8F0;
+  --ink:        #1E293B;
+
+  --serif:  'Cormorant Garamond', Georgia, serif;
+  --sans:   'DM Sans', system-ui, sans-serif;
+  --mono:   'DM Mono', monospace;
+
+  --max-w: 860px;
+  --col-w: 680px;
+}
+
+/* ── Reset & Base ─────────────────────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; font-size: 18px; }
+
+body {
+  background: var(--cream);
+  color: var(--ink);
+  font-family: var(--serif);
+  line-height: 1.75;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+/* ── Scroll progress bar ──────────────────────────────────────────────────── */
+#progress-bar {
+  position: fixed;
+  top: 0; left: 0;
+  height: 3px;
+  width: 0%;
+  background: linear-gradient(90deg, var(--teal), var(--gold));
+  z-index: 1000;
+  transition: width 0.1s linear;
+}
+
+/* ── Sticky nav ───────────────────────────────────────────────────────────── */
+nav {
+  position: sticky;
+  top: 0;
+  z-index: 900;
+  background: rgba(15, 42, 92, 0.97);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+  padding: 0 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 56px;
+}
+
+.nav-brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+}
+
+.nav-logo-mark {
+  width: 28px; height: 28px;
+  background: linear-gradient(135deg, var(--teal), var(--royal));
+  border-radius: 6px;
+  display: flex; align-items: center; justify-content: center;
+  font-family: var(--serif);
+  font-weight: 700;
+  font-size: 14px;
+  color: #fff;
+  letter-spacing: -0.5px;
+  flex-shrink: 0;
+}
+
+.nav-site {
+  font-family: var(--sans);
+  font-size: 13px;
+  font-weight: 500;
+  color: rgba(255,255,255,0.85);
+  letter-spacing: 0.02em;
+}
+
+.nav-tag {
+  font-family: var(--sans);
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--teal-light);
+  background: rgba(13,148,136,0.18);
+  border: 1px solid rgba(13,148,136,0.3);
+  border-radius: 100px;
+  padding: 3px 10px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+/* ── Hero / Cover ─────────────────────────────────────────────────────────── */
+.cover {
+  background: var(--navy);
+  color: #fff;
+  position: relative;
+  overflow: hidden;
+  padding: 100px 2rem 80px;
+}
+
+/* Geometric background texture */
+.cover::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 80% 60% at 70% 30%, rgba(29,78,216,0.25) 0%, transparent 70%),
+    radial-gradient(ellipse 50% 40% at 20% 80%, rgba(13,148,136,0.2) 0%, transparent 60%);
+  pointer-events: none;
+}
+
+.cover::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 79px,
+      rgba(255,255,255,0.025) 79px,
+      rgba(255,255,255,0.025) 80px
+    ),
+    repeating-linear-gradient(
+      90deg,
+      transparent,
+      transparent 79px,
+      rgba(255,255,255,0.02) 79px,
+      rgba(255,255,255,0.02) 80px
+    );
+  pointer-events: none;
+}
+
+.cover-inner {
+  max-width: var(--max-w);
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+}
+
+.cover-meta-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 36px;
+  flex-wrap: wrap;
+}
+
+.cover-label {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.45);
+}
+
+.cover-label-pill {
+  font-family: var(--sans);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--teal-light);
+  background: rgba(13,148,136,0.2);
+  border: 1px solid rgba(13,148,136,0.35);
+  border-radius: 100px;
+  padding: 3px 12px;
+}
+
+.cover-dot { color: rgba(255,255,255,0.2); font-size: 10px; }
+
+.cover-eyebrow {
+  font-family: var(--sans);
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--teal-light);
+  margin-bottom: 20px;
+  opacity: 0;
+  transform: translateY(12px);
+  animation: fadeUp 0.7s ease forwards 0.1s;
+}
+
+.cover-title {
+  font-family: var(--serif);
+  font-size: clamp(2.4rem, 5vw, 3.8rem);
+  font-weight: 600;
+  line-height: 1.15;
+  letter-spacing: -0.01em;
+  color: #fff;
+  margin-bottom: 16px;
+  opacity: 0;
+  transform: translateY(16px);
+  animation: fadeUp 0.8s ease forwards 0.2s;
+}
+
+.cover-title em {
+  font-style: italic;
+  color: rgba(191,219,254,0.9);
+}
+
+.cover-subtitle {
+  font-family: var(--serif);
+  font-size: 1.3rem;
+  font-weight: 400;
+  font-style: italic;
+  color: rgba(255,255,255,0.55);
+  margin-bottom: 48px;
+  opacity: 0;
+  transform: translateY(14px);
+  animation: fadeUp 0.8s ease forwards 0.35s;
+}
+
+.cover-divider {
+  width: 48px;
+  height: 2px;
+  background: linear-gradient(90deg, var(--teal), transparent);
+  margin-bottom: 36px;
+  opacity: 0;
+  animation: fadeUp 0.6s ease forwards 0.45s;
+}
+
+.cover-author-row {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 48px;
+  opacity: 0;
+  transform: translateY(10px);
+  animation: fadeUp 0.7s ease forwards 0.5s;
+}
+
+.author-avatar {
+  width: 48px; height: 48px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--teal), var(--royal));
+  display: flex; align-items: center; justify-content: center;
+  font-family: var(--serif);
+  font-size: 18px;
+  font-weight: 600;
+  color: #fff;
+  flex-shrink: 0;
+  border: 2px solid rgba(255,255,255,0.15);
+}
+
+.author-info {}
+.author-name {
+  font-family: var(--sans);
+  font-weight: 500;
+  font-size: 15px;
+  color: #fff;
+  line-height: 1.3;
+}
+.author-title {
+  font-family: var(--sans);
+  font-size: 13px;
+  color: rgba(255,255,255,0.5);
+  line-height: 1.4;
+}
+
+/* Stats row on cover */
+.cover-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  background: rgba(255,255,255,0.08);
+  border-radius: 12px;
+  overflow: hidden;
+  opacity: 0;
+  transform: translateY(16px);
+  animation: fadeUp 0.8s ease forwards 0.65s;
+}
+
+.cover-stat {
+  background: rgba(255,255,255,0.04);
+  padding: 24px 20px;
+  text-align: center;
+  transition: background 0.2s;
+}
+
+.cover-stat:hover { background: rgba(255,255,255,0.08); }
+
+.stat-value {
+  font-family: var(--serif);
+  font-size: 2.4rem;
+  font-weight: 600;
+  color: var(--teal-light);
+  line-height: 1.1;
+  display: block;
+}
+
+.stat-label {
+  font-family: var(--sans);
+  font-size: 12px;
+  color: rgba(255,255,255,0.45);
+  margin-top: 6px;
+  line-height: 1.4;
+}
+
+/* ── Article Layout ───────────────────────────────────────────────────────── */
+.article-wrap {
+  max-width: var(--max-w);
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+/* Abstract */
+.abstract-section {
+  border-left: 3px solid var(--teal);
+  background: linear-gradient(135deg, rgba(13,148,136,0.06), rgba(13,148,136,0.02));
+  padding: 32px 36px;
+  margin: 60px 0 20px;
+  border-radius: 0 8px 8px 0;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.abstract-section.visible { opacity: 1; transform: translateY(0); }
+
+.abstract-label {
+  font-family: var(--mono);
+  font-size: 10.5px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--teal);
+  font-weight: 500;
+  margin-bottom: 12px;
+}
+
+.abstract-text {
+  font-family: var(--serif);
+  font-size: 1.15rem;
+  font-style: italic;
+  color: var(--slate);
+  line-height: 1.8;
+}
+
+/* Meta strip */
+.meta-strip {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  background: var(--silver);
+  border: 1px solid var(--silver);
+  border-radius: 8px;
+  overflow: hidden;
+  margin-bottom: 72px;
+}
+
+.meta-cell {
+  background: var(--warm-white);
+  padding: 16px 20px;
+  text-align: center;
+}
+
+.meta-cell-label {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--light-slate);
+  display: block;
+  margin-bottom: 4px;
+}
+
+.meta-cell-value {
+  font-family: var(--sans);
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--navy);
+}
+
+/* ── Section ─────────────────────────────────────────────────────────────── */
+.section {
+  margin-bottom: 72px;
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.section.visible { opacity: 1; transform: translateY(0); }
+
+.section-head {
+  display: flex;
+  align-items: baseline;
+  gap: 14px;
+  border-bottom: 1.5px solid var(--silver);
+  padding-bottom: 14px;
+  margin-bottom: 32px;
+}
+
+.section-num {
+  font-family: var(--mono);
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--teal);
+  letter-spacing: 0.08em;
+  flex-shrink: 0;
+  margin-top: 4px;
+}
+
+.section-title {
+  font-family: var(--serif);
+  font-size: 1.65rem;
+  font-weight: 600;
+  color: var(--navy);
+  line-height: 1.25;
+  letter-spacing: -0.01em;
+}
+
+/* Body text */
+p.body-text {
+  font-family: var(--serif);
+  font-size: 1.05rem;
+  line-height: 1.85;
+  color: var(--slate);
+  margin-bottom: 22px;
+}
+
+p.body-text:last-child { margin-bottom: 0; }
+
+/* ── Pull quote ───────────────────────────────────────────────────────────── */
+.pull-quote {
+  border-left: 4px solid var(--royal);
+  background: linear-gradient(135deg, rgba(29,78,216,0.06), rgba(29,78,216,0.02));
+  padding: 28px 36px;
+  margin: 36px 0;
+  border-radius: 0 8px 8px 0;
+  position: relative;
+}
+
+.pull-quote::before {
+  content: '\201C';
+  font-family: var(--serif);
+  font-size: 5rem;
+  color: rgba(29,78,216,0.12);
+  position: absolute;
+  top: -10px; left: 20px;
+  line-height: 1;
+  pointer-events: none;
+}
+
+.pull-quote p {
+  font-family: var(--serif);
+  font-size: 1.3rem;
+  font-style: italic;
+  font-weight: 500;
+  color: var(--royal);
+  line-height: 1.65;
+}
+
+.pull-quote.gold {
+  border-left-color: var(--gold);
+  background: linear-gradient(135deg, rgba(180,83,9,0.06), rgba(180,83,9,0.02));
+}
+
+.pull-quote.gold::before { color: rgba(180,83,9,0.1); }
+.pull-quote.gold p { color: var(--gold); }
+
+.pull-quote.teal {
+  border-left-color: var(--teal);
+  background: linear-gradient(135deg, rgba(13,148,136,0.07), rgba(13,148,136,0.02));
+}
+
+.pull-quote.teal::before { color: rgba(13,148,136,0.12); }
+.pull-quote.teal p { color: var(--teal); }
+
+/* ── Stat row ─────────────────────────────────────────────────────────────── */
+.stat-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  margin: 32px 0;
+}
+
+.stat-card {
+  border: 1px solid var(--silver);
+  border-radius: 10px;
+  padding: 24px 16px;
+  text-align: center;
+  background: var(--warm-white);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.stat-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.07);
+}
+
+.stat-card .val {
+  font-family: var(--serif);
+  font-size: 2.6rem;
+  font-weight: 600;
+  line-height: 1.1;
+  display: block;
+}
+
+.stat-card .val.blue { color: var(--royal); }
+.stat-card .val.teal { color: var(--teal); }
+.stat-card .val.gold { color: var(--gold); }
+.stat-card .val.orange { color: #C2410C; }
+
+.stat-card .lbl {
+  font-family: var(--sans);
+  font-size: 12px;
+  color: var(--mid-slate);
+  margin-top: 8px;
+  line-height: 1.45;
+}
+
+/* ── Two-column grid ─────────────────────────────────────────────────────── */
+.two-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+  margin: 32px 0;
+}
+
+.col-card {
+  padding: 24px 24px 20px;
+  border-radius: 10px;
+  border: 1px solid var(--silver);
+}
+
+.col-card.blue-tint  { background: rgba(29,78,216,0.04); border-color: rgba(29,78,216,0.15); }
+.col-card.teal-tint  { background: rgba(13,148,136,0.05); border-color: rgba(13,148,136,0.18); }
+.col-card.gold-tint  { background: rgba(180,83,9,0.04); border-color: rgba(180,83,9,0.15); }
+.col-card.purple-tint { background: rgba(109,40,217,0.04); border-color: rgba(109,40,217,0.15); }
+.col-card.orange-tint { background: rgba(194,65,12,0.04); border-color: rgba(194,65,12,0.15); }
+.col-card.green-tint  { background: rgba(21,128,61,0.04); border-color: rgba(21,128,61,0.15); }
+
+.col-card h4 {
+  font-family: var(--sans);
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  margin-bottom: 12px;
+}
+
+.col-card h4.blue  { color: var(--royal); }
+.col-card h4.teal  { color: var(--teal); }
+.col-card h4.gold  { color: var(--gold); }
+.col-card h4.purple { color: #6D28D9; }
+.col-card h4.orange { color: #C2410C; }
+.col-card h4.green  { color: #15803D; }
+
+.col-card p {
+  font-family: var(--serif);
+  font-size: 0.97rem;
+  line-height: 1.8;
+  color: var(--slate);
+}
+
+.col-card ul {
+  list-style: none;
+  padding: 0;
+  margin-top: 4px;
+}
+
+.col-card ul li {
+  font-family: var(--serif);
+  font-size: 0.95rem;
+  line-height: 1.75;
+  color: var(--slate);
+  padding-left: 18px;
+  position: relative;
+  margin-bottom: 4px;
+}
+
+.col-card ul li::before {
+  content: '▸';
+  position: absolute;
+  left: 0;
+  color: var(--teal);
+  font-size: 10px;
+  top: 6px;
+}
+
+/* ── Insight boxes ─────────────────────────────────────────────────────────── */
+.insight-box {
+  display: grid;
+  grid-template-columns: 48px 1fr;
+  gap: 0;
+  border-radius: 10px;
+  overflow: hidden;
+  margin-bottom: 16px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.insight-num {
+  display: flex; align-items: flex-start; justify-content: center;
+  padding-top: 20px;
+  font-family: var(--serif);
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #fff;
+}
+
+.insight-num.blue   { background: var(--royal); }
+.insight-num.teal   { background: var(--teal); }
+.insight-num.gold   { background: var(--gold); }
+.insight-num.purple { background: #6D28D9; }
+.insight-num.green  { background: #15803D; }
+
+.insight-body {
+  padding: 18px 22px;
+}
+
+.insight-body.blue   { background: rgba(29,78,216,0.05); }
+.insight-body.teal   { background: rgba(13,148,136,0.06); }
+.insight-body.gold   { background: rgba(180,83,9,0.05); }
+.insight-body.purple { background: rgba(109,40,217,0.05); }
+.insight-body.green  { background: rgba(21,128,61,0.05); }
+
+.insight-heading {
+  font-family: var(--sans);
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+.insight-heading.blue   { color: var(--royal); }
+.insight-heading.teal   { color: var(--teal); }
+.insight-heading.gold   { color: var(--gold); }
+.insight-heading.purple { color: #6D28D9; }
+.insight-heading.green  { color: #15803D; }
+
+.insight-text {
+  font-family: var(--serif);
+  font-size: 0.95rem;
+  line-height: 1.78;
+  color: var(--mid-slate);
+}
+
+/* ── Sidebar box ───────────────────────────────────────────────────────────── */
+.sidebar-box {
+  border: 1px solid var(--silver);
+  border-radius: 10px;
+  padding: 28px 32px;
+  background: var(--warm-white);
+  margin: 28px 0;
+}
+
+.sidebar-box.slate { background: #F8FAFC; border-color: #CBD5E1; }
+.sidebar-box.orange { background: rgba(194,65,12,0.04); border-color: rgba(194,65,12,0.2); }
+
+.sidebar-title {
+  font-family: var(--sans);
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--navy);
+  margin-bottom: 16px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--silver);
+}
+
+.sidebar-title.orange-txt { color: #C2410C; border-color: rgba(194,65,12,0.2); }
+
+.sidebar-box ul { list-style: none; padding: 0; }
+.sidebar-box ul li {
+  font-family: var(--serif);
+  font-size: 0.97rem;
+  line-height: 1.75;
+  color: var(--slate);
+  padding-left: 22px;
+  position: relative;
+  margin-bottom: 8px;
+}
+
+.sidebar-box ul li::before {
+  content: '▸';
+  position: absolute;
+  left: 0;
+  font-size: 10px;
+  top: 7px;
+  color: var(--navy);
+}
+
+.sidebar-box.orange ul li::before { color: #C2410C; }
+
+/* ── PET Framework ─────────────────────────────────────────────────────────── */
+.pet-framework {
+  margin: 28px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.pet-item {
+  display: grid;
+  grid-template-columns: 56px 1fr;
+  gap: 0;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+}
+
+.pet-letter {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--serif);
+  font-size: 2rem;
+  font-weight: 700;
+  color: #fff;
+}
+
+.pet-letter.blue   { background: linear-gradient(180deg, #1D4ED8, #1e40af); }
+.pet-letter.teal   { background: linear-gradient(180deg, #0D9488, #0f766e); }
+.pet-letter.gold   { background: linear-gradient(180deg, #B45309, #92400e); }
+
+.pet-content {
+  padding: 20px 26px;
+}
+
+.pet-content.blue   { background: rgba(29,78,216,0.05); }
+.pet-content.teal   { background: rgba(13,148,136,0.06); }
+.pet-content.gold   { background: rgba(180,83,9,0.05); }
+
+.pet-content h4 {
+  font-family: var(--sans);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+
+.pet-content h4.blue   { color: var(--royal); }
+.pet-content h4.teal   { color: var(--teal); }
+.pet-content h4.gold   { color: var(--gold); }
+
+.pet-content p {
+  font-family: var(--serif);
+  font-size: 0.97rem;
+  line-height: 1.8;
+  color: var(--mid-slate);
+}
+
+/* ── Author card ────────────────────────────────────────────────────────── */
+.author-card {
+  background: var(--navy);
+  border-radius: 12px;
+  padding: 44px 44px 36px;
+  margin-top: 80px;
+  color: #fff;
+  position: relative;
+  overflow: hidden;
+}
+
+.author-card::before {
+  content: '';
+  position: absolute;
+  top: -40px; right: -40px;
+  width: 200px; height: 200px;
+  background: radial-gradient(circle, rgba(13,148,136,0.25), transparent 70%);
+  pointer-events: none;
+}
+
+.author-card-top {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 24px;
+}
+
+.author-card-avatar {
+  width: 64px; height: 64px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--teal), #1D4ED8);
+  display: flex; align-items: center; justify-content: center;
+  font-family: var(--serif);
+  font-size: 24px;
+  font-weight: 600;
+  color: #fff;
+  flex-shrink: 0;
+  border: 2px solid rgba(255,255,255,0.15);
+}
+
+.author-card-name {
+  font-family: var(--serif);
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: #fff;
+  line-height: 1.2;
+}
+
+.author-card-role {
+  font-family: var(--sans);
+  font-size: 13px;
+  color: rgba(255,255,255,0.5);
+  margin-top: 4px;
+}
+
+.author-card-bio {
+  font-family: var(--serif);
+  font-size: 1rem;
+  font-style: italic;
+  color: rgba(255,255,255,0.65);
+  line-height: 1.8;
+  margin-bottom: 28px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255,255,255,0.1);
+}
+
+.author-card-links {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.author-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--sans);
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--teal-light);
+  text-decoration: none;
+  border: 1px solid rgba(13,148,136,0.35);
+  border-radius: 100px;
+  padding: 6px 16px;
+  background: rgba(13,148,136,0.1);
+  transition: background 0.2s, border-color 0.2s;
+}
+
+.author-link:hover {
+  background: rgba(13,148,136,0.25);
+  border-color: rgba(13,148,136,0.6);
+}
+
+/* ── References ────────────────────────────────────────────────────────────── */
+.references {
+  margin-top: 60px;
+  padding-top: 32px;
+  border-top: 1px solid var(--silver);
+  margin-bottom: 80px;
+}
+
+.references h3 {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--light-slate);
+  margin-bottom: 16px;
+}
+
+.references p {
+  font-family: var(--sans);
+  font-size: 13px;
+  color: var(--mid-slate);
+  line-height: 1.7;
+}
+
+/* ── Animations ────────────────────────────────────────────────────────────── */
+@keyframes fadeUp {
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ── Responsive ────────────────────────────────────────────────────────────── */
+@media (max-width: 700px) {
+  .cover-stats  { grid-template-columns: 1fr 1fr 1fr; gap: 1px; }
+  .stat-value   { font-size: 1.7rem; }
+  .stat-row     { grid-template-columns: 1fr; }
+  .two-col      { grid-template-columns: 1fr; gap: 16px; }
+  .meta-strip   { grid-template-columns: 1fr; }
+  .author-card  { padding: 28px 24px; }
+  .pull-quote   { padding: 20px 24px; }
+  nav           { padding: 0 1rem; }
+  .article-wrap { padding: 0 1.25rem; }
+}
+
+@media (max-width: 500px) {
+  .cover { padding: 70px 1.25rem 60px; }
+  .cover-stats { grid-template-columns: 1fr; }
+}
+
+/* ── Reading time chip ──────────────────────────────────────────────────────── */
+.read-time {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--mono);
+  font-size: 11px;
+  color: rgba(255,255,255,0.4);
+  letter-spacing: 0.06em;
+}
+
+.read-time-dot { width: 4px; height: 4px; border-radius: 50%; background: var(--teal); display: inline-block; }
+
+/* ── Table of Contents ─────────────────────────────────────────────────────── */
+.toc {
+  background: var(--warm-white);
+  border: 1px solid var(--silver);
+  border-radius: 10px;
+  padding: 28px 32px;
+  margin-bottom: 60px;
+}
+
+.toc-label {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--light-slate);
+  margin-bottom: 16px;
+  display: block;
+}
+
+.toc ol {
+  list-style: none;
+  padding: 0;
+  counter-reset: toc;
+  columns: 2;
+  column-gap: 32px;
+}
+
+.toc ol li {
+  counter-increment: toc;
+  margin-bottom: 10px;
+  break-inside: avoid;
+}
+
+.toc ol li a {
+  font-family: var(--sans);
+  font-size: 13.5px;
+  color: var(--slate);
+  text-decoration: none;
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  transition: color 0.2s;
+}
+
+.toc ol li a:hover { color: var(--royal); }
+
+.toc-num {
+  font-family: var(--mono);
+  font-size: 10.5px;
+  color: var(--teal);
+  flex-shrink: 0;
+}
+
+@media (max-width: 600px) { .toc ol { columns: 1; } }
+</style>
+
 </head>
-
 <body>
-  <div id="progress-bar"></div>
 
-  <nav>
-    <a href="index.html" class="nav-brand">
-      <div class="nav-logo-mark">DG</div>
-      <span class="nav-site">Deesha Global</span>
-    </a>
-    <span class="nav-tag">Research Paper</span>
-  </nav>
+<!-- Progress bar -->
 
-  <header class="cover">
-    <div class="cover-inner">
+<div id="progress-bar"></div>
 
-      <div class="cover-meta-row">
-        <span class="cover-label-pill">Research Paper</span>
-        <span class="cover-dot">·</span>
-        <span class="cover-label">LinkedIn Publication</span>
-        <span class="cover-dot">·</span>
-        <span class="read-time"><span class="read-time-dot"></span> 18 min read</span>
-      </div>
+<!-- Navigation -->
 
-      <div class="cover-eyebrow">HR Technology &amp; Automation</div>
+<nav>
+  <a href="https://www.deesha-global.com" class="nav-brand">
+    <div class="nav-logo-mark">DG</div>
+    <span class="nav-site">Deesha Global</span>
+  </a>
+  <span class="nav-tag">Research Paper</span>
+</nav>
 
-      <h1 class="cover-title">
-        HR Technology in Singapore SMEs:<br>
-        <em>From Survival Instinct to Strategic Imperative</em>
-      </h1>
+<!-- ═══════════════════════════════════════════════════════════════ COVER ══ -->
 
-      <p class="cover-subtitle">
-        What a founder's vantage point reveals about the gap between ambition and action
-      </p>
+<header class="cover">
+  <div class="cover-inner">
 
-      <div class="cover-divider"></div>
+```
+<div class="cover-meta-row">
+  <span class="cover-label-pill">Research Paper</span>
+  <span class="cover-dot">·</span>
+  <span class="cover-label">LinkedIn Publication</span>
+  <span class="cover-dot">·</span>
+  <span class="read-time"><span class="read-time-dot"></span> 18 min read</span>
+</div>
 
-      <div class="cover-author-row">
-        <div class="author-avatar">SG</div>
-        <div>
-          <div class="author-name">Shashwati Guha</div>
-          <div class="author-title">Founder &amp; Director, Deesha Global Pte. Ltd. &nbsp;·&nbsp; March 2026</div>
-        </div>
-      </div>
+<div class="cover-eyebrow">HR Technology &amp; Automation</div>
 
-      <div class="cover-stats">
-        <div class="cover-stat">
-          <span class="stat-value">97%</span>
-          <span class="stat-label">SME digital adoption rate (2024)</span>
-        </div>
-        <div class="cover-stat">
-          <span class="stat-value">83%</span>
-          <span class="stat-label">Companies struggling to hire in 2025</span>
-        </div>
-        <div class="cover-stat">
-          <span class="stat-value">14.5%</span>
-          <span class="stat-label">SME AI adoption — tripled in one year</span>
-        </div>
-      </div>
+<h1 class="cover-title">
+  HR Technology in Singapore SMEs:<br>
+  <em>From Survival Instinct to Strategic Imperative</em>
+</h1>
 
+<p class="cover-subtitle">
+  What a founder's vantage point reveals about the gap between ambition and action
+</p>
+
+<div class="cover-divider"></div>
+
+<div class="cover-author-row">
+  <div class="author-avatar">SG</div>
+  <div class="author-info">
+    <div class="author-name">Shashwati Guha</div>
+    <div class="author-title">Founder &amp; Director, Deesha Global Pte. Ltd. &nbsp;·&nbsp; March 2026</div>
+  </div>
+</div>
+
+<div class="cover-stats">
+  <div class="cover-stat">
+    <span class="stat-value">97%</span>
+    <span class="stat-label">SME digital adoption rate (2024)</span>
+  </div>
+  <div class="cover-stat">
+    <span class="stat-value">83%</span>
+    <span class="stat-label">Companies struggling to hire in 2025</span>
+  </div>
+  <div class="cover-stat">
+    <span class="stat-value">14.5%</span>
+    <span class="stat-label">SME AI adoption — tripled in one year</span>
+  </div>
+</div>
+```
+
+  </div>
+</header>
+
+<!-- ═══════════════════════════════════════════════════════ ARTICLE BODY ══ -->
+
+<main class="article-wrap">
+
+  <!-- Abstract -->
+
+  <div class="abstract-section" id="abstract">
+    <div class="abstract-label">Abstract</div>
+    <p class="abstract-text">
+      As the Founder and Director of Deesha Global Pte. Ltd. — a Singapore-incorporated firm at the intersection of people, education, and technology — I have had a front-row seat to one of the most consequential shifts reshaping our business landscape: the accelerating adoption of HR technology among Singapore's small and medium enterprises. This paper distils my observations, the findings of primary research conducted in early 2026, and a synthesis of the prevailing body of industry data to argue that HR automation has crossed a threshold. It is no longer a discretionary investment — it is the minimum viable infrastructure for any Singapore SME that intends to compete, comply, and grow in the decade ahead.
+    </p>
+  </div>
+
+  <!-- Meta strip -->
+
+  <div class="meta-strip">
+    <div class="meta-cell">
+      <span class="meta-cell-label">Research Context</span>
+      <span class="meta-cell-value">Tendance Research Insights (ESOMAR)</span>
     </div>
-  </header>
-
-  <main class="article-wrap">
-
-    <div class="abstract-section" id="abstract">
-      <div class="abstract-label">Abstract</div>
-      <p class="abstract-text">
-        As the Founder and Director of Deesha Global Pte. Ltd. — a Singapore-incorporated firm at the intersection of people, education, and technology —
-        I have had a front-row seat to one of the most consequential shifts reshaping our business landscape: the accelerating adoption of HR technology among Singapore's small and medium enterprises.
-        This paper distils my observations, the findings of primary research conducted in early 2026, and a synthesis of the prevailing body of industry data to argue that HR automation has crossed a threshold.
-        It is no longer a discretionary investment — it is the minimum viable infrastructure for any Singapore SME that intends to compete, comply, and grow in the decade ahead.
-      </p>
+    <div class="meta-cell">
+      <span class="meta-cell-label">Focus Geography</span>
+      <span class="meta-cell-value">Singapore SME Sector</span>
     </div>
-
-    <div class="meta-strip">
-      <div class="meta-cell">
-        <span class="meta-cell-label">Research Context</span>
-        <span class="meta-cell-value">Tendance Research Insights (ESOMAR)</span>
-      </div>
-      <div class="meta-cell">
-        <span class="meta-cell-label">Focus Geography</span>
-        <span class="meta-cell-value">Singapore SME Sector</span>
-      </div>
-      <div class="meta-cell">
-        <span class="meta-cell-label">Publication Date</span>
-        <span class="meta-cell-value">March 2026</span>
-      </div>
+    <div class="meta-cell">
+      <span class="meta-cell-label">Publication Date</span>
+      <span class="meta-cell-value">March 2026</span>
     </div>
+  </div>
 
-    <div class="toc">
-      <span class="toc-label">Contents</span>
-      <ol>
-        <li><a href="#s1"><span class="toc-num">01</span> A Founder's Vantage Point</a></li>
-        <li><a href="#s2"><span class="toc-num">02</span> The Singapore SME Reality</a></li>
-        <li><a href="#s3"><span class="toc-num">03</span> The Hidden Cost of Inaction</a></li>
-        <li><a href="#s4"><span class="toc-num">04</span> The Technology Landscape</a></li>
-        <li><a href="#s5"><span class="toc-num">05</span> Government Support</a></li>
-        <li><a href="#s6"><span class="toc-num">06</span> The Implementation Gap</a></li>
-        <li><a href="#s7"><span class="toc-num">07</span> A People-First Framework</a></li>
-        <li><a href="#s8"><span class="toc-num">08</span> Looking Forward</a></li>
-        <li><a href="#s9"><span class="toc-num">09</span> Where Deesha Global Stands</a></li>
-        <li><a href="#s10"><span class="toc-num">10</span> Conclusion</a></li>
-      </ol>
-    </div>
+  <!-- Table of Contents -->
 
-    <section class="section" id="s1">
-      <div class="section-head">
-        <span class="section-num">01</span>
-        <h2 class="section-title">Why I Am Writing This — A Founder's Vantage Point</h2>
-      </div>
+  <div class="toc">
+    <span class="toc-label">Contents</span>
+    <ol>
+      <li><a href="#s1"><span class="toc-num">01</span> A Founder's Vantage Point</a></li>
+      <li><a href="#s2"><span class="toc-num">02</span> The Singapore SME Reality</a></li>
+      <li><a href="#s3"><span class="toc-num">03</span> The Hidden Cost of Inaction</a></li>
+      <li><a href="#s4"><span class="toc-num">04</span> The Technology Landscape</a></li>
+      <li><a href="#s5"><span class="toc-num">05</span> Government Support</a></li>
+      <li><a href="#s6"><span class="toc-num">06</span> The Implementation Gap</a></li>
+      <li><a href="#s7"><span class="toc-num">07</span> A People-First Framework</a></li>
+      <li><a href="#s8"><span class="toc-num">08</span> Looking Forward</a></li>
+      <li><a href="#s9"><span class="toc-num">09</span> Where Deesha Global Stands</a></li>
+      <li><a href="#s10"><span class="toc-num">10</span> Conclusion</a></li>
+    </ol>
+  </div>
 
-      <p class="body-text">I will be direct: this paper grew out of frustration as much as curiosity. Over the past two years, building Deesha Global and running the Co-Founder Launchpad programme — which helps mid-career professionals transition into Singapore's startup ecosystem — I have sat across the table from dozens of founders, HR managers, and business owners who share a common anxiety. They know their HR processes are broken, they suspect technology can fix them, and yet they find themselves paralysed between the fear of cost, the fog of grant bureaucracy, and the very real shortage of in-house expertise to implement anything at all.</p>
+  <!-- ── SECTION 01 ── -->
 
-      <p class="body-text">What I have observed as a founder mirrors what the research data confirms: Singapore SMEs are not suffering from a lack of awareness about HR technology. They are suffering from a lack of structured, trusted guidance on how to evaluate, implement, and embed it into their operational DNA.</p>
-
-      <div class="pull-quote">
-        <p>The question for Singapore SMEs is no longer whether to adopt HR technology. It is whether you can afford to delay.</p>
-      </div>
-
-      <p class="body-text">My perspective is shaped by Singapore's unique commercial environment. We are a city-state of extraordinary ambition and constrained resources — tight labour pools, rising wages, a regulatory framework that is both world-class and demanding, and a government that has consistently underwritten digital transformation with generous grant schemes.</p>
-    </section>
-
-    <!-- KEEP YOUR OTHER SECTIONS (s2...s10) EXACTLY AS YOU WROTE THEM -->
-    <!-- Just paste them here without any ``` blocks -->
-
-    <div class="author-card section" id="author">
-      <div class="author-card-top">
-        <div class="author-card-avatar">SG</div>
-        <div>
-          <div class="author-card-name">Shashwati Guha</div>
-          <div class="author-card-role">Founder &amp; Director · Deesha Global Pte. Ltd. (UEN: 202554716D) · SSIC 70201</div>
-        </div>
-      </div>
-
-      <p class="author-card-bio">
-        Deesha Global is a Singapore-incorporated firm dedicated to guiding growth across borders — supporting families, students, professionals, and institutions with trusted advisory across education, careers, and technology.
-        Our five pillars — Co-Founder Launchpad, Global Education Gateway, Career Compass, TutorHub, and AI Mentor Lab — are united by the conviction that the highest leverage you can apply to any human endeavour is helping people move forward with clarity. People · Education · Technology.
-      </p>
-
-      <div class="author-card-links">
-        <a href="https://www.deesha-global.com" class="author-link">🌐 deesha-global.com</a>
-        <a href="https://www.linkedin.com/in/shashwatiguha" class="author-link">in LinkedIn</a>
-        <a href="https://www.linkedin.com/company/deesha-global-pte-ltd/" class="author-link">🏢 Deesha Global</a>
-        <a href="mailto:info@deesha-global.com" class="author-link">✉ info@deesha-global.com</a>
-      </div>
+  <section class="section" id="s1">
+    <div class="section-head">
+      <span class="section-num">01</span>
+      <h2 class="section-title">Why I Am Writing This — A Founder's Vantage Point</h2>
     </div>
 
-    <div class="references">
-      <h3>Research Context &amp; Data Sources</h3>
-      <p>This paper draws on primary research conducted in early 2026 by Tendance Research Insights (ESOMAR registered) on HR technology adoption among Singapore SMEs, supplemented by other publicly available workforce and industry sources.</p>
+```
+<p class="body-text">I will be direct: this paper grew out of frustration as much as curiosity. Over the past two years, building Deesha Global and running the Co-Founder Launchpad programme — which helps mid-career professionals transition into Singapore's startup ecosystem — I have sat across the table from dozens of founders, HR managers, and business owners who share a common anxiety. They know their HR processes are broken, they suspect technology can fix them, and yet they find themselves paralysed between the fear of cost, the fog of grant bureaucracy, and the very real shortage of in-house expertise to implement anything at all.</p>
+
+<p class="body-text">What I have observed as a founder mirrors what the research data confirms: Singapore SMEs are not suffering from a lack of awareness about HR technology. They are suffering from a lack of structured, trusted guidance on how to evaluate, implement, and embed it into their operational DNA. That gap — between awareness and action — is precisely the space that Deesha Global was built to inhabit. Our five-pillar model spanning the Co-Founder Launchpad, Global Education Gateway, Career Compass, TutorHub, and AI Mentor Lab was designed around a single conviction: that the highest leverage you can apply to any organisation is helping its people work smarter.</p>
+
+<div class="pull-quote">
+  <p>The question for Singapore SMEs is no longer whether to adopt HR technology. It is whether you can afford to delay.</p>
+</div>
+
+<p class="body-text">My perspective is shaped by Singapore's unique commercial environment. We are a city-state of extraordinary ambition and constrained resources — tight labour pools, rising wages, a regulatory framework that is both world-class and demanding, and a government that has consistently underwritten digital transformation with generous grant schemes. The SME sector sits at the heart of all of this. And HR technology is, I believe, the most consequential lever available to it.</p>
+```
+
+  </section>
+
+  <!-- ── SECTION 02 ── -->
+
+  <section class="section" id="s2">
+    <div class="section-head">
+      <span class="section-num">02</span>
+      <h2 class="section-title">Setting the Scene — The Singapore SME Reality in 2025–2026</h2>
     </div>
 
-  </main>
+```
+<p class="body-text">To understand why HR technology has moved from nice-to-have to non-negotiable, one must first appreciate the environment in which Singapore SMEs operate. The numbers are at once impressive and sobering.</p>
 
-  <script>
-    // Scroll progress bar
-    const bar = document.getElementById('progress-bar');
-    window.addEventListener('scroll', () => {
-      const scrollTop = window.scrollY;
-      const docH = document.documentElement.scrollHeight - window.innerHeight;
-      bar.style.width = (scrollTop / docH * 100) + '%';
-    }, { passive: true });
+<div class="stat-row">
+  <div class="stat-card">
+    <span class="val blue">97%</span>
+    <span class="lbl">SMEs with at least one digital solution (2024)</span>
+  </div>
+  <div class="stat-card">
+    <span class="val orange">83%</span>
+    <span class="lbl">Companies that struggled to hire in 2025</span>
+  </div>
+  <div class="stat-card">
+    <span class="val teal">14.5%</span>
+    <span class="lbl">SME AI adoption rate — tripled from 4.2% in 2023</span>
+  </div>
+</div>
 
-    // Reveal animations
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-          observer.unobserve(entry.target);
-        }
+<p class="body-text">These statistics tell a story of a sector that is digitally committed but operationally stretched. On one hand, digitalization has reached near-universal coverage. On the other hand, the structural labour market tension is acute: approximately 40,000 new jobs are created in Singapore annually, against a workforce expansion of only 30,000 to 32,000 people. The arithmetic of this mismatch explains why 83% of companies reported difficulty hiring in 2025.</p>
+
+<p class="body-text">What I find particularly striking — and what I discuss at length when I engage with founders in our Launchpad programme — is the trajectory of AI adoption. At 4.2% in 2023, AI felt like a distant aspiration for most SMEs. At 14.5% in 2024, it has become a credible operational reality for a growing cohort. That is a tripling in a single year. The acceleration is real, and the laggards are beginning to feel it.</p>
+
+<div class="two-col">
+  <div class="col-card orange-tint">
+    <h4 class="orange">The Macroeconomic Squeeze</h4>
+    <p>Only 47% of Singapore SMEs expect growth as employee costs rise sharply. Meanwhile, 41% expect economic conditions to worsen through Q1 2025. Rising rent, utilities, and compliance obligations compound the pressure. Against this backdrop, every hour an HR manager spends manually processing payroll is an hour not spent on talent development or the culture-building that retains scarce talent.</p>
+  </div>
+  <div class="col-card purple-tint">
+    <h4 class="purple">The Regulatory Imperative</h4>
+    <p>Singapore's regulatory environment is rigorous by design. The Tripartite Guidelines on Fair Employment Practices, the Flexible Work Arrangement Requests framework (effective December 2024), the Workplace Fairness Act, and CPF and IRAS compliance obligations mean that the cost of HR errors is not merely operational — it is reputational and legal. HR technology is risk mitigation infrastructure.</p>
+  </div>
+</div>
+```
+
+  </section>
+
+  <!-- ── SECTION 03 ── -->
+
+  <section class="section" id="s3">
+    <div class="section-head">
+      <span class="section-num">03</span>
+      <h2 class="section-title">The Hidden Cost of Staying Manual</h2>
+    </div>
+
+```
+<p class="body-text">Numbers tell part of the story. But when I sit with a founder who has just lost their third HR executive in eighteen months to burnout, or a business owner who confesses that payroll takes three full working days every month, I am reminded that behind every data point is a human being making a decision about where to spend their limited professional energy.</p>
+
+<p class="body-text">The research I participated in, conducted by Tendance Research Insights for a study on HR technology adoption among Singapore SMEs, confirmed several patterns I had already observed anecdotally in the course of building Deesha Global:</p>
+
+<div class="sidebar-box slate">
+  <div class="sidebar-title">What the Research Confirmed</div>
+  <ul>
+    <li>Payroll processing time reduced from 3 days to as little as 4 hours with automated HRMS adoption</li>
+    <li>Engineering SMEs reporting 203% ROI in their first year after PSG-subsidised HRMS implementation</li>
+    <li>Onboarding timelines compressed from 7 days to just 2 days with integrated HR platforms</li>
+    <li>AI chatbots handling over 1,000 HR queries per month at regional firms — freeing HR staff for strategic work</li>
+    <li>SMEs achieving only 30% of expected efficiency gains when implementation is poorly planned</li>
+  </ul>
+</div>
+
+<p class="body-text">That last statistic deserves emphasis: a 30% efficiency realisation rate is not a technology failure — it is a change management failure. And this is where I speak with particular conviction from the Deesha Global vantage point. In our AI Mentor Lab and Career Compass work, we encounter this dynamic repeatedly: the tool is sound; the transition plan is absent. Technology without a human-centred adoption strategy is expensive furniture.</p>
+
+<div class="pull-quote gold">
+  <p>HR technology does not replace the human in Human Resources. It liberates the human to do what only humans can.</p>
+</div>
+
+<p class="body-text">I think about this through the lens of what I call the 'strategic HR pivot'. In our Co-Founder Launchpad work, one of the most consistent challenges facing early-stage Singapore startups is the burden of administrative HR on their founding team. Every hour a founder spends on payroll reconciliation is an hour not spent on product, customer, or capital. Automation does not just improve HR — it reallocates founder attention toward growth-generating activities. At scale, that distinction is existential.</p>
+```
+
+  </section>
+
+  <!-- ── SECTION 04 ── -->
+
+  <section class="section" id="s4">
+    <div class="section-head">
+      <span class="section-num">04</span>
+      <h2 class="section-title">The Technology Landscape — What Singapore SMEs Are Actually Adopting</h2>
+    </div>
+
+```
+<p class="body-text">The HR technology stack available to Singapore SMEs has matured considerably. What was once a choice between expensive enterprise software and manual spreadsheets has become a rich, tiered ecosystem of cloud-native, mobile-first, SaaS-delivered solutions — many pre-approved for PSG funding. Based on the research data and my own observations, I see adoption clustering around five functional areas:</p>
+
+<div class="insight-box">
+  <div class="insight-num blue">1</div>
+  <div class="insight-body blue">
+    <div class="insight-heading blue">Integrated Payroll &amp; Compliance Automation</div>
+    <p class="insight-text">CPF and IRAS compliance automation has become the primary entry point for HR tech adoption. The penalty for payroll errors is high; the relief offered by automated calculation, e-filing, and regulatory update alerts is immediate and quantifiable. Singapore's HR software market is expected to grow at 15% annually from 2025 to 2030 — the fastest in Southeast Asia — and payroll automation is the foundational layer of that market.</p>
+  </div>
+</div>
+
+<div class="insight-box">
+  <div class="insight-num teal">2</div>
+  <div class="insight-body teal">
+    <div class="insight-heading teal">Cloud-Based Leave &amp; Attendance Management</div>
+    <p class="insight-text">The shift to hybrid and flexible work — with half of professionals now preferring hybrid arrangements and only 19% preferring fully in-office work — has made cloud-based attendance and leave management non-optional. Manual systems simply cannot handle the complexity of compressed workweeks, asynchronous schedules, and remote team management.</p>
+  </div>
+</div>
+
+<div class="insight-box">
+  <div class="insight-num gold">3</div>
+  <div class="insight-body gold">
+    <div class="insight-heading gold">AI-Powered Recruitment &amp; Screening</div>
+    <p class="insight-text">AI adoption in recruitment is accelerating rapidly. A 2025 Findem study found that AI hiring systems can deliver up to 45% fairer outcomes than human decision-making alone — a particularly relevant finding in the context of Singapore's Tripartite Guidelines on Fair Employment Practices. For SMEs competing against large corporations for limited talent, AI-assisted screening can level the playing field meaningfully.</p>
+  </div>
+</div>
+
+<div class="insight-box">
+  <div class="insight-num purple">4</div>
+  <div class="insight-body purple">
+    <div class="insight-heading purple">Employee Self-Service &amp; Experience Platforms</div>
+    <p class="insight-text">The generational shift in the workforce has raised expectations around digital experience. A Singapore regional firm deployed an AI HR chatbot that handled over 1,000 employee queries in its first month alone — questions about leave balances, expense policies, and onboarding documentation that had previously consumed hours of HR bandwidth weekly. Self-service is not just efficient; it is expected.</p>
+  </div>
+</div>
+
+<div class="insight-box">
+  <div class="insight-num green">5</div>
+  <div class="insight-body green">
+    <div class="insight-heading green">Workforce Analytics &amp; Predictive Planning</div>
+    <p class="insight-text">The most forward-thinking SMEs are moving beyond operational automation into strategic analytics — using HR dashboards to correlate headcount against revenue performance, model attrition risk, and plan for skills gaps before they become hiring crises. A Singapore logistics firm monitoring overtime costs through its HR analytics dashboard proactively hired two additional staff — reducing burnout and improving retention.</p>
+  </div>
+</div>
+```
+
+  </section>
+
+  <!-- ── SECTION 05 ── -->
+
+  <section class="section" id="s5">
+    <div class="section-head">
+      <span class="section-num">05</span>
+      <h2 class="section-title">Government Support — An Underutilised Enabler</h2>
+    </div>
+
+```
+<p class="body-text">Singapore's grant ecosystem for SME digitalization is, by any international benchmark, exceptional. The Productivity Solutions Grant (PSG), which funds up to 50% of pre-approved HR software solutions — with some vendors reporting effective subsidies reaching 70% — is arguably the most powerful underutilised tool in the SME arsenal. The Enterprise Development Grant (EDG) extends this to more advanced HR transformation programmes.</p>
+
+<p class="body-text">And yet, in my conversations with SME founders and operators through the Deesha Global network, I encounter a consistent and frustrating pattern: awareness of the grants is high; utilisation is inconsistent. The friction is not financial — it is navigational. Founders do not know which vendors are pre-approved, how to structure a phased implementation to qualify for grant support, or how to build the business case for internal sign-off. This is a guidance problem, not a funding problem.</p>
+
+<div class="two-col">
+  <div class="col-card blue-tint">
+    <h4 class="blue">The Case for PSG</h4>
+    <p>An engineering SME that switched to a cloud-based HRMS — with PSG covering a significant portion of the cost — reduced its expense claims processing from three weeks to five days and achieved a 203% ROI in the first year. This is not an outlier. It is the expected outcome of well-planned adoption with proper grant leverage. The PSG framework allows SMEs to implement in phases, making the capital commitment at any given point manageable.</p>
+  </div>
+  <div class="col-card orange-tint">
+    <h4 class="orange">What Blocks Utilisation</h4>
+    <ul>
+      <li>Complexity in identifying pre-approved vendors for specific use cases</li>
+      <li>Uncertainty about phased implementation eligibility</li>
+      <li>Absence of internal HR technology expertise to scope requirements</li>
+      <li>Resistance from leadership not yet convinced of ROI</li>
+      <li>Misalignment between grant timelines and business planning cycles</li>
+    </ul>
+  </div>
+</div>
+```
+
+  </section>
+
+  <!-- ── SECTION 06 ── -->
+
+  <section class="section" id="s6">
+    <div class="section-head">
+      <span class="section-num">06</span>
+      <h2 class="section-title">The Implementation Gap — Where Ambition Meets Friction</h2>
+    </div>
+
+```
+<p class="body-text">It would be intellectually dishonest to write a paper advocating for HR technology adoption without confronting the very real barriers that cause good intentions to stall. The research data is clear: implementation failure is not a rare exception — it is a structurally predictable outcome of adoption without adequate preparation.</p>
+
+<p class="body-text">I have seen this pattern play out among companies in Deesha Global's network. A founder is persuaded by a compelling vendor demo. The software is procured. Three months later, 60% of the features remain unused, the HR team is still maintaining parallel spreadsheets, and the CFO is questioning the investment. This is not a technology problem. It is a change management and strategy problem.</p>
+
+<div class="sidebar-box orange">
+  <div class="sidebar-title orange-txt">The Six Friction Points — As I Have Observed Them</div>
+  <ul>
+    <li>Cost anxiety that persists even with grant availability — the unfunded portion feels large when cash flow is tight</li>
+    <li>Absence of internal technical champions — someone needs to own the implementation, and in lean SMEs, no one has bandwidth</li>
+    <li>Culture resistance — employees who fear automation signals redundancy disengage from adoption</li>
+    <li>Integration complexity — legacy payroll, accounting, and time-tracking tools do not always play nicely with new HRMS platforms</li>
+    <li>Poor vendor fit — not all pre-approved vendors are equal; matching organisational scale to the right product is non-trivial</li>
+    <li>Inadequate training investment — the software is live, but no one knows how to use more than 30% of it</li>
+  </ul>
+</div>
+
+<p class="body-text">The antidote to each of these friction points is the same: structured, expert guidance that begins well before the procurement decision and extends well past the go-live date. My experience building Deesha Global has reinforced a conviction I hold deeply: the highest leverage intervention you can make in an SME's digital transformation journey is helping its leadership team think clearly about the problem they are solving before they spend a dollar on the tool.</p>
+
+<div class="pull-quote">
+  <p>Start with strategy. Start with the problem statement. The technology is the easy part — if you know what you are asking it to do.</p>
+</div>
+```
+
+  </section>
+
+  <!-- ── SECTION 07 ── -->
+
+  <section class="section" id="s7">
+    <div class="section-head">
+      <span class="section-num">07</span>
+      <h2 class="section-title">A People-First Framework for HR Technology Adoption</h2>
+    </div>
+
+```
+<p class="body-text">Drawing on the Deesha Global philosophy — <strong>People · Education · Technology</strong> — I want to propose a practical adoption framework that I believe is missing from most vendor-led conversations about HR technology. I call it the <em>PET Sequence</em>, and it deliberately inverts the order in which most SMEs approach this problem.</p>
+
+<div class="pet-framework">
+  <div class="pet-item">
+    <div class="pet-letter blue">P</div>
+    <div class="pet-content blue">
+      <h4 class="blue">People First</h4>
+      <p>Before evaluating a single platform, map your people reality. Who are your HR stakeholders? What do your employees actually struggle with? Where is human time being consumed by tasks that add no strategic value? In the Deesha Global model, this is the diagnostic phase — equivalent to the profiling work we do in Career Compass before recommending any career pivot. You cannot design a solution without first understanding the problem at a human level.</p>
+    </div>
+  </div>
+
+  <div class="pet-item">
+    <div class="pet-letter teal">E</div>
+    <div class="pet-content teal">
+      <h4 class="teal">Education Second</h4>
+      <p>Equip your team before you deploy the tool. The research consistently shows that technology investment fails when adoption training is treated as an afterthought. In our AI Mentor Lab work, we see this dynamic constantly: organisations that invest 15% of their technology budget in pre-deployment training see adoption rates three to four times higher than those that do not. An educated team transforms a software licence into a productivity asset.</p>
+    </div>
+  </div>
+
+  <div class="pet-item">
+    <div class="pet-letter gold">T</div>
+    <div class="pet-content gold">
+      <h4 class="gold">Technology Third</h4>
+      <p>Only now, with a clear problem statement and a prepared team, does the technology selection make sense. At this point, the PSG grant framework becomes your ally rather than a bureaucratic hurdle. You know what you need, you know how your team will use it, and you can match the vendor's capability precisely to your operational requirements. Implementation timelines shorten, ROI arrives faster, and the 30% efficiency realisation trap is avoided.</p>
+    </div>
+  </div>
+</div>
+```
+
+  </section>
+
+  <!-- ── SECTION 08 ── -->
+
+  <section class="section" id="s8">
+    <div class="section-head">
+      <span class="section-num">08</span>
+      <h2 class="section-title">Looking Forward — The Next Frontier for Singapore SME HR</h2>
+    </div>
+
+```
+<p class="body-text">The trajectory is clear, and I am bullish about where it leads — though not naively so. The global HR technology market is projected to reach US$81.84 billion by 2032. Singapore's own HR software segment is growing at a compound annual rate of 15% through 2030 — the fastest in Southeast Asia. The digital economy now constitutes 18.6% of Singapore's GDP, up from 14.9% in 2019. These are structural tailwinds, not cyclical upticks.</p>
+
+<div class="stat-row">
+  <div class="stat-card">
+    <span class="val blue">US$81.84B</span>
+    <span class="lbl">Global HR Tech Market by 2032</span>
+  </div>
+  <div class="stat-card">
+    <span class="val teal">18.6%</span>
+    <span class="lbl">Digital Economy share of Singapore GDP (2024)</span>
+  </div>
+  <div class="stat-card">
+    <span class="val gold">15%</span>
+    <span class="lbl">Annual CAGR for Singapore HR software (2025–2030)</span>
+  </div>
+</div>
+
+<p class="body-text">What excites me most, as someone building at the intersection of people, education, and technology, is the convergence of three emerging forces that will redefine what HR means for Singapore SMEs over the next five years:</p>
+
+<div class="two-col">
+  <div class="col-card purple-tint">
+    <h4 class="purple">Agentic AI in HR</h4>
+    <p>The conversation has already moved beyond simple automation to Generative and Agentic AI — systems capable of orchestrating complex, multi-step HR workflows without human intervention. Deloitte identified this as one of the most significant HR technology trends of 2025. For Singapore SMEs, this means AI that can not only screen candidates but also onboard them, track development, flag retention risks, and recommend interventions — all within a single integrated system.</p>
+  </div>
+  <div class="col-card teal-tint">
+    <h4 class="teal">Skills-First Architecture</h4>
+    <p>The chronic talent shortage is forcing a structural rethink of how organisations identify and develop capability. Skills-first hiring — evaluating candidates on demonstrated competency rather than pedigree — is gaining traction globally and in Singapore. HR technology that can map, track, and develop skills portfolios at an individual level will be the competitive differentiator for SMEs that cannot outbid large corporations on salary packages.</p>
+  </div>
+</div>
+
+<div class="two-col" style="margin-top:16px;">
+  <div class="col-card blue-tint">
+    <h4 class="blue">The India–Asia HR Tech Bridge</h4>
+    <p>India has emerged as one of the most sophisticated HR technology development ecosystems globally, producing world-class HRMS, payroll, and AI recruitment platforms that are increasingly competitive with Western products at a fraction of the cost. For Singapore SMEs seeking to establish regional operations — a core theme in our Co-Founder Launchpad programme — this creates an opportunity to build HR tech infrastructure that scales across borders from day one.</p>
+  </div>
+  <div class="col-card orange-tint">
+    <h4 class="orange">Wellbeing as HR Infrastructure</h4>
+    <p>Post-pandemic, employee wellbeing has graduated from a benefits line item to a strategic retention tool. HR technology that integrates mental health support, flexible work management, and personalised engagement analytics is no longer a large-enterprise luxury — it is becoming table stakes for any Singapore SME that wants to retain the talent it works so hard to attract.</p>
+  </div>
+</div>
+```
+
+  </section>
+
+  <!-- ── SECTION 09 ── -->
+
+  <section class="section" id="s9">
+    <div class="section-head">
+      <span class="section-num">09</span>
+      <h2 class="section-title">Where Deesha Global Stands in This Story</h2>
+    </div>
+
+```
+<p class="body-text">I want to be transparent about my stake in this conversation. Deesha Global is not an HR technology vendor. We do not sell software. What we offer — through our five pillars of Co-Founder Launchpad, Global Education Gateway, Career Compass, TutorHub, and AI Mentor Lab — is the human infrastructure that makes technology adoption succeed.</p>
+
+<p class="body-text">When a mid-career professional comes to us through Career Compass trying to understand whether they should retrain, pivot, or build, the conversation almost always touches on how their current employer's HR systems are failing them. When a founder comes to us through the Co-Founder Launchpad trying to build a scalable Singapore startup, the operational architecture of their people function — including its technology stack — is one of the first things we address. When an institution engages our AI Mentor Lab to provide 24/7 guidance to its community, we are building the kind of human-led, technology-enabled advisory model that we believe should inform how SMEs think about their HR function.</p>
+
+<p class="body-text">My hope for this research paper is that it serves as a useful contribution to the thinking of Singapore SME leaders who are at the inflection point — who know that their current HR model is not sustainable, but who feel uncertain about where to begin. My message to them is direct: the grants exist, the technology is ready, the ROI is documented. What remains is the clarity of intent and the commitment to a structured transition. That is the work Deesha Global was built to support.</p>
+```
+
+  </section>
+
+  <!-- ── SECTION 10 ── -->
+
+  <section class="section" id="s10">
+    <div class="section-head">
+      <span class="section-num">10</span>
+      <h2 class="section-title">Conclusion — The Imperative Is Clear</h2>
+    </div>
+
+```
+<p class="body-text">Singapore SMEs face a confluence of forces — talent scarcity, regulatory complexity, rising operational costs, and an accelerating technology landscape — that leaves no comfortable middle ground. HR automation is not a question of when; it is a question of how well. The difference between an SME that realises 200% ROI from its HRMS investment and one that achieves only 30% of projected efficiency gains comes down almost entirely to the quality of preparation, guidance, and change management that precedes and accompanies the technology.</p>
+
+<p class="body-text">The data is unambiguous: AI adoption among Singapore SMEs tripled in a single year. The HR software market is growing at 15% annually. The PSG grant is there, waiting to defray the cost. The technology itself has never been more capable, more affordable, or more accessible.</p>
+
+<p class="body-text">What Singapore SMEs need now is not more information. They have information. What they need is structured, trusted guidance from advisors who understand both the human and the technological dimensions of this transition — people who start with the problem, build the team's readiness, and only then select the tool. That is the conviction behind Deesha Global. And it is the conviction behind this paper.</p>
+
+<div class="pull-quote teal">
+  <p>The future of work in Singapore will be built by SMEs that treat their people function with the same strategic seriousness they apply to their product or their balance sheet.</p>
+</div>
+```
+
+  </section>
+
+  <!-- ── Author Card ── -->
+
+  <div class="author-card section" id="author">
+    <div class="author-card-top">
+      <div class="author-card-avatar">SG</div>
+      <div>
+        <div class="author-card-name">Shashwati Guha</div>
+        <div class="author-card-role">Founder &amp; Director · Deesha Global Pte. Ltd. (UEN: 202554716D) · SSIC 70201</div>
+      </div>
+    </div>
+
+```
+<p class="author-card-bio">
+  Deesha Global is a Singapore-incorporated firm dedicated to guiding growth across borders — supporting families, students, professionals, and institutions with trusted advisory across education, careers, and technology. Our five pillars — Co-Founder Launchpad, Global Education Gateway, Career Compass, TutorHub, and AI Mentor Lab — are united by the conviction that the highest leverage you can apply to any human endeavour is helping people move forward with clarity. People · Education · Technology.
+</p>
+
+<div class="author-card-links">
+  <a href="https://www.deesha-global.com" class="author-link">
+    🌐 deesha-global.com
+  </a>
+  <a href="https://www.linkedin.com/in/shashwatiguha" class="author-link">
+    in LinkedIn
+  </a>
+  <a href="https://www.linkedin.com/company/deesha-global-pte-ltd/" class="author-link">
+    🏢 Deesha Global
+  </a>
+  <a href="mailto:info@deesha-global.com" class="author-link">
+    ✉ info@deesha-global.com
+  </a>
+</div>
+```
+
+  </div>
+
+  <!-- References -->
+
+  <div class="references">
+    <h3>Research Context &amp; Data Sources</h3>
+    <p>This paper draws on primary research conducted in early 2026 by Tendance Research Insights (ESOMAR registered) on HR technology adoption among Singapore SMEs, supplemented by data from the Singapore Smart Nation Initiative, Ministry of Manpower workforce statistics, Grand View Research Southeast Asia HR Software Market Report (2025–2030), Deloitte Global Human Capital Trends 2025, Robert Half Singapore Salary Guide, Findem AI Hiring Equity Study (2025), and industry data from Singapore HR technology vendors including PeopleCentral, Frontier e-HR, and others. All statistics cited are drawn from publicly available or research-provided sources.</p>
+  </div>
+
+</main>
+
+<!-- ═══════════════════════════════════════════════════════════ SCRIPT ══ -->
+
+<script>
+// ── Scroll progress bar
+const bar = document.getElementById('progress-bar');
+window.addEventListener('scroll', () => {
+  const scrollTop = window.scrollY;
+  const docH = document.documentElement.scrollHeight - window.innerHeight;
+  bar.style.width = (scrollTop / docH * 100) + '%';
+}, { passive: true });
+
+// ── Intersection Observer for reveal animations
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+      observer.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+
+document.querySelectorAll('.section, .abstract-section').forEach(el => observer.observe(el));
+
+// ── Stagger child animations within sections
+document.querySelectorAll('.section').forEach((section, i) => {
+  section.style.transitionDelay = '0ms';
+});
+
+// ── Active section highlighting in TOC (optional enhancement)
+const sections = document.querySelectorAll('section[id]');
+const tocLinks = document.querySelectorAll('.toc a');
+
+const sectionObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      tocLinks.forEach(link => {
+        link.style.color = '';
+        link.style.fontWeight = '';
       });
-    }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+      const activeLink = document.querySelector(`.toc a[href="#${entry.target.id}"]`);
+      if (activeLink) {
+        activeLink.style.color = 'var(--royal)';
+        activeLink.style.fontWeight = '600';
+      }
+    }
+  });
+}, { threshold: 0.5 });
 
-    document.querySelectorAll('.section, .abstract-section').forEach(el => observer.observe(el));
-
-    // Active section highlighting in TOC
-    const sections = document.querySelectorAll('section[id]');
-    const tocLinks = document.querySelectorAll('.toc a');
-
-    const sectionObserver = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          tocLinks.forEach(link => { link.style.color = ''; link.style.fontWeight = ''; });
-          const activeLink = document.querySelector(`.toc a[href="#${entry.target.id}"]`);
-          if (activeLink) {
-            activeLink.style.color = 'var(--royal)';
-            activeLink.style.fontWeight = '600';
-          }
-        }
-      });
-    }, { threshold: 0.5 });
-
-    sections.forEach(s => sectionObserver.observe(s));
-  </script>
+sections.forEach(s => sectionObserver.observe(s));
+</script>
 
 </body>
 </html>
