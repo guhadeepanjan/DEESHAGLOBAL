@@ -470,17 +470,6 @@ p.body-text:last-child { margin-bottom: 0; }
   position: relative;
 }
 
-.pull-quote::before {
-  content: '\201C';
-  font-family: var(--serif);
-  font-size: 5rem;
-  color: rgba(29,78,216,0.12);
-  position: absolute;
-  top: -10px; left: 20px;
-  line-height: 1;
-  pointer-events: none;
-}
-
 .pull-quote p {
   font-family: var(--serif);
   font-size: 1.3rem;
@@ -497,7 +486,6 @@ p.body-text:last-child { margin-bottom: 0; }
   background: linear-gradient(135deg, rgba(180,83,9,0.06), rgba(180,83,9,0.02));
 }
 
-.pull-quote.gold::before { color: rgba(180,83,9,0.1); }
 .pull-quote.gold p { color: var(--gold); }
 
 .pull-quote.teal {
@@ -505,7 +493,6 @@ p.body-text:last-child { margin-bottom: 0; }
   background: linear-gradient(135deg, rgba(13,148,136,0.07), rgba(13,148,136,0.02));
 }
 
-.pull-quote.teal::before { color: rgba(13,148,136,0.12); }
 .pull-quote.teal p { color: var(--teal); }
 
 /* ── Stat row ─────────────────────────────────────────────────────────────── */
@@ -614,7 +601,7 @@ p.body-text:last-child { margin-bottom: 0; }
 }
 
 .col-card ul li::before {
-  content: '▸';
+  content: '\25B8';
   position: absolute;
   left: 0;
   color: var(--teal);
@@ -718,7 +705,7 @@ p.body-text:last-child { margin-bottom: 0; }
 }
 
 .sidebar-box ul li::before {
-  content: '▸';
+  content: '\25B8';
   position: absolute;
   left: 0;
   font-size: 10px;
@@ -1006,12 +993,12 @@ p.body-text:last-child { margin-bottom: 0; }
 }
 
 /* Safety net: ensure cover is always visible after 2s even if animation stalls */
-.cover-eyebrow  { animation: fadeUp 0.7s ease forwards 0.1s, showFallback 0s linear 2s forwards; }
-.cover-title    { animation: fadeUp 0.8s ease forwards 0.2s, showFallback 0s linear 2s forwards; }
-.cover-subtitle { animation: fadeUp 0.8s ease forwards 0.35s, showFallback 0s linear 2s forwards; }
-.cover-divider  { animation: fadeUp 0.6s ease forwards 0.45s, showFallback 0s linear 2s forwards; }
-.cover-author-row { animation: fadeUp 0.7s ease forwards 0.5s, showFallback 0s linear 2s forwards; }
-.cover-stats    { animation: fadeUp 0.8s ease forwards 0.65s, showFallback 0s linear 2s forwards; }
+.cover-eyebrow  { animation: fadeUp 0.7s ease forwards 0.1s; }
+.cover-title    { animation: fadeUp 0.8s ease forwards 0.2s; }
+.cover-subtitle { animation: fadeUp 0.8s ease forwards 0.35s; }
+.cover-divider  { animation: fadeUp 0.6s ease forwards 0.45s; }
+.cover-author-row { animation: fadeUp 0.7s ease forwards 0.5s; }
+.cover-stats    { animation: fadeUp 0.8s ease forwards 0.65s; }
 
 @keyframes showFallback { to { opacity: 1; transform: none; } }
 </style>
@@ -1096,7 +1083,7 @@ p.body-text:last-child { margin-bottom: 0; }
   <div class="abstract-section" id="abstract">
     <div class="abstract-label">Abstract</div>
     <p class="abstract-text">
-      As the Founder and Director of Deesha Global Pte. Ltd. &#8212; a Singapore-incorporated firm at the intersection of people, education, and technology &#8212; I have had a front-row seat to one of the most consequential shifts reshaping our business landscape: the accelerating adoption of HR technology among Singapore&#8217;s small and medium enterprises. This paper distils my observations, fieldwork conversations, and a synthesis of the prevailing body of publicly available industry data to argue that HR automation has crossed a threshold. It is no longer a discretionary investment &#8212; it is the minimum viable infrastructure for any Singapore SME that intends to compete, comply, and grow in the decade ahead.
+      As the Founder and Director of Deesha Global Pte. Ltd. &#8212; a Singapore-incorporated firm at the intersection of people, education, and technology &#8212; I have had a front-row seat to one of the most consequential shifts reshaping our business landscape: the accelerating adoption of HR technology among Singapore's small and medium enterprises. This paper distils my observations, fieldwork conversations, and a synthesis of the prevailing body of publicly available industry data to argue that HR automation has crossed a threshold. It is no longer a discretionary investment &#8212; it is the minimum viable infrastructure for any Singapore SME that intends to compete, comply, and grow in the decade ahead.
     </p>
   </div>
 
@@ -1528,7 +1515,7 @@ p.body-text:last-child { margin-bottom: 0; }
 
   <div class="references">
     <h3>Data Sources &amp; Research Context</h3>
-    <p>The statistics and findings in this paper are drawn from the following publicly available sources: Singapore Smart Nation Initiative and IMDA Digitalisation Reports (2023&#8211;2025); Ministry of Manpower Singapore Workforce Statistics and Labour Market Survey; Grand View Research &#8212; Southeast Asia HR Software Market Report (2025&#8211;2030); Deloitte Global Human Capital Trends 2025; Robert Half Singapore Salary Guide and Hiring Outlook; Findem AI Hiring Equity Study (2025); Enterprise Singapore PSG and EDG programme documentation; and publicly reported case studies from Singapore HR technology vendors. All observations and interpretations are the author&#8217;s own. This paper does not represent any formal commissioned research engagement.</p>
+    <p>The statistics and findings in this paper are drawn from the following publicly available sources: Singapore Smart Nation Initiative and IMDA Digitalisation Reports (2023&#8211;2025); Ministry of Manpower Singapore Workforce Statistics and Labour Market Survey; Grand View Research &#8212; Southeast Asia HR Software Market Report (2025&#8211;2030); Deloitte Global Human Capital Trends 2025; Robert Half Singapore Salary Guide and Hiring Outlook; Findem AI Hiring Equity Study (2025); Enterprise Singapore PSG and EDG programme documentation; and publicly reported case studies from Singapore HR technology vendors. All observations and interpretations are the author's own. This paper does not represent any formal commissioned research engagement.</p>
   </div>
 
 </main>
